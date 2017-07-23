@@ -1,0 +1,33 @@
+.green-button {
+  background: $primary-color;
+  color: white;
+  border-radius: 40px;
+  padding: 1rem 2rem;
+  &:hover {
+    background: white;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    text-decoration: none;
+  }
+}
+
+.green-button.square {
+  border-radius: 0;
+}
+
+.dropdown-custom-style {
+  border-radius: 70px!important;
+  border: 1px solid $primary-color!important;
+  cursor: pointer;
+  display: flex!important;
+  align-items: center;
+
+  .admin-pic {
+    width: 40px;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+}
