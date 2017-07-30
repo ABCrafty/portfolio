@@ -10,23 +10,20 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Histoire du AMMA</a>
+                <a class="nav-link" href="#">Projets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Entreprises</a>
+                <a class="nav-link" href="#">Actualités</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Evénementiel</a>
+                <a class="nav-link" href="#">A propos de moi</a>
             </li>
+
+            @role('admin')
             <li class="nav-item">
-                <a class="nav-link" href="#">Particuliers</a>
+                <a class="nav-link" href="{{ route('dashboard.index') }}">Accéder à la zone admin</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
+            @endrole
         </ul>
 
             <ul class="nav navbar-nav navbar-right">

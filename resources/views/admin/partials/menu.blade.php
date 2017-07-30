@@ -2,7 +2,7 @@
     <ul>
         <li>Dashboard</li>
         <li>Accueil</li>
-        <li>Histoire Amma</li>
+        <li></li>
         <li>Blog</li>
         <li>Contact</li>
     </ul>

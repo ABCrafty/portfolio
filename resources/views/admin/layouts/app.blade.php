@@ -48,7 +48,7 @@
                 <div class="row no-gutters">
                     <div class="sidebar-admin">
                         <div class="admin-button">
-                            <a href="{{ route('dashboard.index') }}">Admin <span class="show-sidebar">Amma-Massage</span></a>
+                            <a href="{{ route('dashboard.index') }}">Admin <span class="show-sidebar">Portfolio</span></a>
                         </div>
                         <div class="sidebar-profile">
                             <div class="admin-pic">
@@ -71,10 +71,12 @@
                             @else
                                 <li><a href="{{ route('homepage.create') }}"><i class="fa fa-home" aria-hidden="true"></i> <span class="show-sidebar">Page d'accueil</span></a></li>
                             @endif
-                            <li><a href="{{ route('story-amma.index') }}"><i class="fa fa-book" aria-hidden="true"></i>
-                                    <span class="show-sidebar">Histoire AMMA</span></a></li>
+                            <li><a href="{{ route('projects.index') }}"><i class="fa fa-book" aria-hidden="true"></i>
+                                    <span class="show-sidebar">Projets</span></a></li>
                             <li><a href="{{ route('blog-admin.index') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i>
                                     <span class="show-sidebar">Blog</span></a></li>
+                            <li><a href="{{ route('about.index') }}"><i class="fa fa-user-md" aria-hidden="true"></i>
+                                    <span class="show-sidebar">Page à propos</span></a></li>
                             <li><a href="{{ route('users.index') }}"><i class="fa fa-user" aria-hidden="true"></i>
                                     <span class="show-sidebar">Utilisateurs</span></a></li>
                         </ul>

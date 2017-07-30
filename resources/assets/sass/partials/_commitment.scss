@@ -1,0 +1,61 @@
+.commitments {
+
+
+  h3 {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .commitment {
+    background: #2b2b2b;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    margin: auto;
+
+    h4 {
+      text-align: center;
+    }
+
+
+    .fa {
+      display: block;
+      font-size: 2rem;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+
+    }
+  }
+
+  .back {
+    .fa {
+      width: 17px;
+      height: 19px;
+      padding: 0.6rem;
+    }
+  }
+
+  .interests {
+    p {
+      text-align: center;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+
+.commitment-contain {
+}

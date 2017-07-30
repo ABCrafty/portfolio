@@ -5,78 +5,133 @@
 @endsection
 
 @section('content')
+    <div id="homepage" style="background: url('images/rhone.jpg') no-repeat center center">
+        <div class="homepage-container">
+            <h1>Alexandre Black</h1>
+            <h2>Développeur FullStack</h2>
+            <p>25 ans</p>
+
+            <a href="#projects" class="js-scrollTo">
+                <div class="link-projects">
+                    <p>Découvrez mes projets</p>
+                    <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                </div>
+            </a>
+        </div>
+    </div> <!-- #homepage -->
+
+    <div id="projects" class="page">
+        <h3>Projets/Réalisations</h3>
+        <div class="projects-container">
+
+            <!-- projet -->
+            <ul class="grid cs-style">
+
+                <li class="project">
+                    <figure>
+                        <img src="images/kipponlogo.jpg" alt="img01">
+                        <figcaption>
+                            <h5>Titre</h5>
+                            <a href="">En savoir plus</a>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li class="project">
+                    <figure>
+                        <img src="images/kipponlogo.jpg" alt="img01">
+                        <figcaption>
+                            <h5>Titre</h5>
+                            <a href="">En savoir plus</a>
+                        </figcaption>
+                    </figure>
+                </li>
+
+                <li class="project">
+                    <figure>
+                        <img src="images/kipponlogo.jpg" alt="img01">
+                        <figcaption>
+                            <h5>Titre</h5>
+                            <a href="">En savoir plus</a>
+                        </figcaption>
+                    </figure>
+                </li>
 
 
-    <div class="container-fluid ">
-        <div class="row homepage-landing align-items-end"
-             style=" background: url({{asset('image/massage.jpg')}}) fixed no-repeat;background-size:cover;">
-            <div class="tel animated bounceInRight">
-                <p>{{$homepage->phone_text}}</p>
-                <p><a href="tel:+330622032225">{{$homepage->phone}}</a></p>
-            </div>
-
-            <div class="massage-amma">
-                    <h1>{{ $homepage->title }}</h1>
-                    <p>{{ $homepage->content_title }}</p>
-                    <a href="#" class="green-button">{{ $homepage->title_link }}</a>
+                @if(count($projects) > 0)
+                    {{--@foreach($projects as $project)--}}
+                        {{--<li class="project">--}}
+                            {{--<figure>--}}
+                                {{--<img src="{{$project['logo']}}" alt="img01">--}}
+                                {{--<figcaption>--}}
+                                    {{--<h5>{{$project['title']}}</h5>--}}
+                                    {{--<a href="{{ route('front.projects.show') }}">En savoir plus</a>--}}
+                                {{--</figcaption>--}}
+                            {{--</figure>--}}
+                        {{--</li>--}}
+                    {{--@endforeach--}}
+                @endif
+            </ul>
+            <div class="project other-projects">
+                <p>Pour découvrir mes autres projets c'est</p>
+                <a href="{{ route('front.projects.index') }}" class="home-project-link">Par ici !</a>
             </div>
         </div>
+    </div> <!-- #project -->
 
-    </div>
-
-    <div class="container-fluid">
-        <div class="row justify-content-around infos" style="$color">
-            <div class="col-12 col-sm-6 info">
-                <i class="fa fa-calendar text-center" aria-hidden="true"></i>
-                <p class="text-center">{{ $homepage->service_1 }}</p>
-            </div>
-            <div class="col-12 col-sm-6 info">
-                <i class="fa fa-map-marker text-center" aria-hidden="true"></i>
-                <p class="text-center">{{ $homepage->service_2 }}</p>
-            </div>
-            <div class="col-12 col-sm-6 info">
-                <i class="fa fa-graduation-cap text-center" aria-hidden="true"></i>
-                <p class="text-center">{{ $homepage->service_3 }}</p>
-            </div>
-            <div class="col-12 col-sm-6 info">
-                <i class="fa fa-star text-center" aria-hidden="true"></i>
-                <p class="text-center">{{ $homepage->service_4 }}</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="offers">
-        <p>{{ $homepage->offer_preview }}</p>
-
-        <div class="row no-gutters">
-            <div class="col-md-4">
-                <div class="service animated">
-                    <i class="fa fa-linode" aria-hidden="true"></i>
-                    <h6>{{ $homepage->offer_title_2 }}</h6>
-                    <p>{{ $homepage->offer_content_1 }}</p>
-                    <a href="#" class="green-button square">{{ $homepage->offer_link_1 }}</a>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="service animated">
-                    <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
-                    <h6>{{ $homepage->offer_title_2 }}</h6>
-                    <p>{{ $homepage->offer_content_2 }}</p>
-                    <a href="#" class="green-button square">{{ $homepage->offer_link_2 }}</a>
+    <div id="about" class="page">
+        <div class="commitments">
+            <h3>Mes engagements</h3>
+            <div class="commitments-container">
+                <div class="commitment-contain">
+                    <div class="commitment">
+                        <i class="fa fa-code" aria-hidden="true"></i>
+                        <h4>Intégration</h4>
+                        <p>
+                            Une bonne page commence par une bonne intégration. Armé de SASS et Bootstrap, amoureux du CSS,
+                            je pratique le pixel perfect. Amenez-moi une maquette et je vous la transforme en page web
+                            sans problème !
+                        </p>
+                    </div>
                 </div>
 
+                <div class="commitment-contain">
+                    <div class="commitment">
+                        <i class="fa fa-superpowers" aria-hidden="true"></i>
+                        <h4>FrontEnd</h4>
+                        <p>
+                            Une page bien intégrée c'est cool. Une page bien intégrée et interactive c'est
+                            encore plus cool ! Que vous ayez besoin de jQuery pour un site ou d'Angular pour une application,
+                            votre projet m'enthousiasme déjà !
+                        </p>
+                    </div>
+                </div>
 
-            </div>
+                <div class="commitment-contain">
+                    <div class="commitment">
+                        <i class="fa fa-code-fork" aria-hidden="true"></i>
+                        <h4>BackEnd</h4>
+                        <p>
+                            Au-delà de la façade, je vous propose également une solution BackEnd sous Laravel
+                            pour automatiser vos sites, les rendre dynamiques et sécurisés !
+                        </p>
+                    </div>
+                </div>
 
-            <div class="col-md-4">
-                <div class="service animated">
-                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                    <h6>{{ $homepage->offer_title_3 }}</h6>
-                    <p>{{ $homepage->offer_content_3 }}</p>
-                    <a href="#" class="green-button square">{{ $homepage->offer_link_3 }}</a>
+                <div class="commitment-contain">
+                    <div class="interests commitment">
+                        <p>Les technos que je souhaite apprendre : </p>
+                        <ul>
+                            <?php // @foreach($learntech as $tech) ?>
+                            <li class="tag">Angular 2</li>
+                            <li class="tag">Symfony</li>
+                            <li class="tag">ES6/Next</li>
+                            <li class="tag">TypeScript</li>
+                            <?php // @endforeach ?>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> <!-- .commitments -->
+    </div> <!-- #about -->
 @endsection

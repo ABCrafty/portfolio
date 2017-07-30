@@ -13,6 +13,9 @@
 
 Route::resource('blog', 'PostsController');
 
+Route::get('projets', 'ProjectsController@index')->name('front.projects.index');
+Route::get('projets/{project}', 'ProjectsController@show')->name('front.projects.show');
+
 Route::get('/', 'HomeController@index')->name('home');
 
 // Authentification
@@ -35,6 +38,10 @@ Route::group(['prefix' => 'admin',  'middleware' => ['role:admin']], function()
     // users, profile
     Route::resource('users', 'Admin\UsersController');
 
+    // projects
+    Route::resource('projects', 'Admin\ProjectsController');
+
+    Route::resource('about', 'Admin\AboutController');
     // roles
     Route::resource('roles', 'RolesController');
 

@@ -1,3 +1,264 @@
+/*======
+LARGE MOBILES
+======*/
+
+@media screen and (min-width:550px) {
+  .grid li {
+    width: 70%;
+  }
+}
+
+/*======
+TOUCHPADS
+======*/
+@media screen and (min-width:768px) {
+
+  body {
+    font-size: 22px;
+  }
+
+  #homepage {
+    height: 91vh;
+    justify-content: flex-start;
+
+    h1,h2,p {
+      font-size: 5rem;
+    }
+
+    .js-scrollTo {
+      display: block;
+      position: absolute;
+      bottom: 30px;
+      color: black;
+      text-align: center;
+      width: 100%;
+    }
+
+    .link-projects {
+      display: block;
+      width: 100%;
+
+      p {
+        font-size: 3rem;
+      }
+
+      .fa {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      width: 44%;
+      &:nth-child(odd) {
+        padding: 1rem 1rem 1rem 2rem;
+      }
+
+      figure {
+        height: 250px;
+
+        img {
+          height: 250px;
+        }
+      }
+    }
+  }
+
+  .other-projects a {
+    width: 40%;
+  }
+
+  .commitments-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .commitment-contain {
+    width: 50%;
+    padding: 0.2rem;
+
+    .commitment {
+      height: 100%;
+    }
+  }
+
+  .profile-text {
+    padding: 2rem;
+
+    .know-more {
+      padding: 1rem;
+    }
+  }
+
+  .footer-container {
+    li {
+      padding: 1rem 5rem
+    }
+  }
+
+  // project show
+
+  .project-show-container {
+    p {
+      padding: 0 1rem;
+    }
+  }
+  .project-logo-tech {
+    width: 35%;
+    float: right;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/*=======
+COMPUTERS
+ ======*/
+
+@media screen and (min-width:1080px) {
+  body {
+    font-size: 16px;
+  }
+
+  #homepage {
+    height: 76vh;
+
+    .js-scrollTo {
+      bottom: 175px;
+    }
+  }
+
+
+
+  .grid {
+    justify-content: flex-start;
+
+    li {
+      width: 25%;
+
+      figure {
+        height: 250px;
+
+        img {
+          height: 250px;
+        }
+      }
+    }
+  }
+
+  .commitment-contain {
+    width: 25%;
+    padding: 0.2rem;
+  }
+
+  .commitment {
+    width: 100%!important;
+  }
+
+  .presentation {
+    .profile-text {
+      .profile {
+        float: none;
+        margin: auto;
+      }
+
+      p {
+        width: 50%;
+        margin: auto;
+      }
+
+      .current-path {
+        p:nth-child(0) {
+          text-align: center;
+        }
+      }
+
+      button {
+        width: 50%;
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+
+  .form-container {
+    width: 50%;
+    margin: auto;
+  }
+
+  .form-text {
+    text-align: center;
+  }
+
+  // project show
+
+  .project-show-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .project-logo-tech {
+    float: none;
+    width: 30%;
+    order: 2;
+    margin: 0;
+  }
+
+  .project-content {
+    width: 68%;
+  }
+
+  .project-images {
+    order: 3;
+  }
+
+  .other-projects {
+    color: white;
+    position: absolute!important;
+    right: 0;
+    bottom: -182px;
+    height: 260px;
+    width: 25%;
+
+    a {
+      width: 90%;
+    }
+  }
+}
+
+/*===========
+LARGE SCREENS
+===========*/
+
+@media screen and (min-width:1600px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 400px) {
   .logo-img {
     width: 50%t;

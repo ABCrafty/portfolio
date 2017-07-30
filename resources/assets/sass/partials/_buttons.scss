@@ -11,6 +11,19 @@
   }
 }
 
+.blue-button {
+  background: $primary-color;
+  color: white;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  &:hover {
+    color: $primary-color;
+    background: white;
+    border: 1px solid $primary-color;
+    text-decoration: none;
+  }
+}
+
 .green-button.square {
   border-radius: 0;
 }
