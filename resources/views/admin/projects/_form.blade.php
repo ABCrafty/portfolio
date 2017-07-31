@@ -15,7 +15,7 @@
     </div>
 
     <div class="col-12">
-        {!! Form::text('body', null, ['class' => 'form-control']) !!}
+        {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
         {!! $errors->first('body', '<span class="help-block">Ce champ est obligatoire</span>') !!}
     </div>
 </div>
@@ -53,6 +53,3 @@
         {!! $errors->first('link', '<span class="help-block">Ce champ est obligatoire</span>') !!}
     </div>
 </div>
-
-<button class="btn" href="{{ route('projects.index') }}">Retour</button>
-<button type="submit" class="btn blue-button">Mettre à jour</button>

@@ -9,10 +9,14 @@ class Project extends Model
     protected $table = "projects";
 
     protected $guarded = [
-       'id', 'user_id'
+        'id'
     ];
 
     protected $hidden = [
-        'id'
+
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }

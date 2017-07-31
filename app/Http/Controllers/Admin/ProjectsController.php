@@ -14,7 +14,8 @@ class ProjectsController extends Controller
     }
 
     public function index() {
-        return view('admin.projects.index');
+        $projects = Project::latest()->count();
+        return view('admin.projects.index', compact('projects'));
     }
 
     public function create() {
@@ -28,7 +29,7 @@ class ProjectsController extends Controller
         $input = [];
 
         $input['title'] = $request->input('title');
-        $input['user_id'] = 1;
+        $input['user_id'] = auth()->user()->id;
         $input['body'] = $request->input('body');
         $input['link'] = $request->input('link');
         $input['logo'] = serialize($logo);
@@ -36,17 +37,28 @@ class ProjectsController extends Controller
         $project = Project::create($input);
         $project->save($input);
 
-        session()->flash('message','Utilisateur mis à jour');
-        return redirect()->route('users.index');
+        session()->flash('message','Nouveau projet créé');
+        return redirect()->route('projects.index');
     }
 
     public function edit($id) {
-        $projects = Project::find($id);
-        return view('admin.projects.edit', compact('projects'));
+        $project = Project::find($id);
+        return view('admin.projects.edit', compact('project'));
     }
 
-    public function update() {
+    public function update($project, Request $request) {
 
+        $project = Project::find($project);
+        $input = [];
+
+        $input['title'] = $request->input('title');
+        $input['body'] = $request->input('body');
+        $input['link'] = $request->input('link');
+
+        $project->update($input);
+
+        session()->flash('message','Projet mis à jour');
+        return redirect()->route('projects.index');
     }
 
     public function destroy() {

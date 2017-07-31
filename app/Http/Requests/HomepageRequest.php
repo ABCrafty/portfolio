@@ -24,25 +24,18 @@ class HomepageRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'phone' => 'required',
-            'phone_text' => 'required',
-            'title' => 'required',
-            'content_title' => 'required',
-            'title_link' => 'required',
-            'service_1' => 'required',
-            'service_2' => 'required',
-            'service_3' => 'required',
-            'service_4' => 'required',
-            'offer_preview' => 'required',
-            'offer_title_1' => 'required',
-            'offer_title_2' => 'required',
-            'offer_title_3' => 'required',
-            'offer_content_1' => 'required',
-            'offer_content_2' => 'required',
-            'offer_content_3' => 'required',
-            'offer_link_1' => 'required',
-            'offer_link_2' => 'required',
-            'offer_link_3' => 'required'
+            'username' => 'required',
+            'job' => 'required',
+            'age' => 'required',
+            'other_projects' => 'required',
+            'commitment1_title' => 'required',
+            'commitment1_content' => 'required',
+            'commitment2_title' => 'required',
+            'commitment2_content' => 'required',
+            'commitment3_title' => 'required',
+            'commitment3_content' => 'required',
+            'tech_title' => 'required',
+            'tech' => 'required',
 
         ];
 

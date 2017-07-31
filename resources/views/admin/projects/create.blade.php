@@ -16,6 +16,8 @@
 
         @include('admin.projects._form')
 
+        <button class="btn" href="{{ route('projects.index') }}">Retour</button>
+        <button type="submit" class="btn blue-button">Créer un nouveau projet</button>
         {!! Form::close() !!}
     </div>
 @endsection

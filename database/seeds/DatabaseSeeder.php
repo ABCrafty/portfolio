@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Permission;
 use App\Role;
 use App\User;
+use App\Homepage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -65,5 +66,26 @@ class DatabaseSeeder extends Seeder
         //here attaching role for user
         $mainAdmin->attachRole($admin);
         $this->command->warn("User correctly promoted to admin");
+
+        $homepage = Homepage::create([
+            'username' => 'Alexandre Black',
+            'job' => 'Développeur FullStack',
+            'age' => '25',
+            'other_projects' => 'Pour découvrir mes autres projets c\'est',
+            'commitment1_title' => 'Intégration',
+            'commitment1_content' => 'Une bonne page commence par une bonne intégration. Armé de SASS et Bootstrap, 
+            amoureux du CSS, je pratique le pixel perfect. Amenez-moi une maquette et je vous la transforme en page 
+            web sans problème !',
+            'commitment2_title' => 'FrontEnd',
+            'commitment2_content' => 'Une page bien intégrée c\'est cool. Une page bien intégrée et interactive c\'est 
+            encore plus cool ! Que vous ayez besoin de jQuery pour un site ou d\'Angular pour une application, 
+            votre projet m\'enthousiasme déjà !',
+            'commitment3_title' => 'BackEnd',
+            'commitment3_content' => 'Au-delà de la façade, je vous propose également une solution BackEnd sous Laravel 
+            pour automatiser vos sites, les rendre dynamiques et sécurisés !',
+            'tech_title' => 'Les technos que je souhaite apprendre',
+            'tech' => 'Symfony, Angular, VueJS, ES6, TypeScript',
+        ]);
+        $this->command->warn("Contenu de la page d'accueil généré");
     }
 }

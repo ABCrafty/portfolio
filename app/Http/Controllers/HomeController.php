@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Homepage;
+use App\Homepage;
 use App\Project;
 
 class HomeController extends Controller
@@ -24,7 +24,9 @@ class HomeController extends Controller
     public function index()
     {
         $homepage = Homepage::first();
-        $projects = Project::count();
-        return view('homepage.index', compact('homepage', 'projects'));
+        $projects = Project::latest()->limit(3)->get();
+        $learnTech = explode(', ', Homepage::pluck('tech'));
+
+        return view('homepage.index', compact('homepage', 'projects', 'learnTech'));
     }
 }

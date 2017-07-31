@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Posts;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
@@ -36,7 +37,11 @@ class User extends Authenticatable
         $this->attributes['password'] = bcrypt($password);
     }
 
+    public function projects() {
+        return $this->hasMany(Project::class);
+    }
+
     public function article() {
-        return $this->hasMany('Posts');
+        return $this->hasMany(Posts::class);
     }
 }

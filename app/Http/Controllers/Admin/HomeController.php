@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
-use App\Models\Homepage;
+use App\Homepage;
 use App\Http\Requests\HomepageRequest;
-use Illuminate\Http\Request;
 
-use Collective\Html\FormFacade;
+
+
 
 class HomeController extends Controller
 {

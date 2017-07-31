@@ -48,6 +48,7 @@ Route::group(['prefix' => 'admin',  'middleware' => ['role:admin']], function()
     Route::resource('permissions', 'PermissionsController');
 
     Route::any('user-data', 'Admin\UsersController@ajaxListing')->name('datatables.data');
+    Route::any('project-data', 'Admin\ProjectsController@ajaxListing')->name('datatables.projectData');
 
     Route::get('admin/story-amma', 'Admin\AmmastoryController@index')->name('story-amma.index');
     Route::get('admin/blog-admin', 'Admin\PostsController@index')->name('blog-admin.index');

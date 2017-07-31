@@ -39,7 +39,7 @@
                         last: '<i class="fa fa-fast-forward" aria-hidden="true"></i>',
                     }
                 },
-                ajax: '{!! route('datatables.data') !!}',
+                ajax: '{!! route('datatables.projectData') !!}',
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'title', name: 'title'},

@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Homepage;
+use App\Homepage;
 use App\User;
 use Illuminate\Support\ServiceProvider;
 

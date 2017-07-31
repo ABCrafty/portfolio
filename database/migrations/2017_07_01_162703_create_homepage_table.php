@@ -15,25 +15,18 @@ class CreateHomepageTable extends Migration
     {
         Schema::create('homepage', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('phone');
-            $table->string('phone_text');
-            $table->string('title');
-            $table->text('content_title');
-            $table->string('title_link');
-            $table->string('service_1');
-            $table->string('service_2');
-            $table->string('service_3');
-            $table->string('service_4');
-            $table->text('offer_preview');
-            $table->string('offer_title_1');
-            $table->string('offer_title_2');
-            $table->string('offer_title_3');
-            $table->text('offer_content_1');
-            $table->text('offer_content_2');
-            $table->text('offer_content_3');
-            $table->string('offer_link_1');
-            $table->string('offer_link_2');
-            $table->string('offer_link_3');
+            $table->string('username');
+            $table->string('job');
+            $table->integer('age');
+            $table->string('other_projects');
+            $table->string('commitment1_title');
+            $table->string('commitment1_content');
+            $table->string('commitment2_title');
+            $table->string('commitment2_content');
+            $table->string('commitment3_title');
+            $table->string('commitment3_content');
+            $table->string('tech_title');
+            $table->string('tech');
             $table->timestamps();
         });
     }

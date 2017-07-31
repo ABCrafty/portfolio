@@ -57,8 +57,8 @@ class UsersController extends Controller
 
         $user->update($input);
 
-        session()->flash('message','Nouveau projet créé');
-        return redirect()->route('projects.index');
+        session()->flash('message','Utilisateur mis à jour');
+        return redirect()->route('users.index');
     }
 
     public function destroy($user) {
