@@ -16,6 +16,10 @@
   text-align: center;
 }
 
+.projects-contain {
+  background: rgba(255,255,255,0.6);
+}
+
 .other-projects {
   background: $primary-color;
   color: white;
@@ -42,11 +46,7 @@
   }
 }
 
-.project-index-container {
-  padding: 1rem;
-}
-
-.project {
+.project-homepage-container {
   padding: 1rem;
 
   .project-logo {
@@ -57,11 +57,35 @@
       overflow: hidden;
       transition: all 0.2s ease-in-out;
       &:hover {
-        transform: scale(1.1) rotate(20deg);
+        transform: scale(1.3) rotate(20deg);
 
       }
     }
   }
+
+}
+
+.front-project-container {
+
+  .project {
+
+    .project-logo {
+      overflow: hidden;
+      img {
+        width: 100%;
+
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          transform: scale(1.3) rotate(20deg);
+
+        }
+      }
+    }
+  }
+}
+
+.project {
+  padding: 1rem;
 
   .project-menu {
     background: $primary-color;
@@ -95,11 +119,11 @@
   font-size: 3rem;
   text-transform: uppercase;
   text-align: center;
-  background: lighten($third-color, 65%)
+  background: lighten($third-color, 27%)
 }
 
 .project-show-container {
-  background: lighten($third-color, 65%);
+  background: lighten($third-color, 27%);
 
   p {
     padding: 1rem;
@@ -135,13 +159,37 @@
   .blue-button {
     display: block;
     text-align: center;
-    width: 96%;
-    margin: auto;
+    width: 100%;
   }
 
   .project-logo {
     img {
       width: 100%;
     }
+  }
+}
+
+.project-tech {
+  text-align: center;
+
+  h3 {
+    padding: 1rem;
+  }
+}
+
+.tech {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+
+  .tag {
+    padding: 1rem 2rem;
+    background: $primary-color;
+    color: white;
+    border-radius: 40px;
+    margin: 0.5rem
+
   }
 }

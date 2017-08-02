@@ -4,6 +4,41 @@ LARGE MOBILES
 
 @media screen and (min-width:550px) {
 
+
+  .homepage-container {
+    h1, h2, p {
+      padding: 1rem;
+    }
+  }
+
+  .project-homepage-container {
+    .project {
+      img {
+        max-width: 400px;
+      }
+    }
+  }
+  .project {
+    .project-logo {
+      width: 60%;
+      margin: auto;
+
+
+    }
+  }
+
+
+  .project-menu {
+    width: 60%;
+    margin: auto;
+  }
+
+  .project-logo-tech {
+    .blue-button {
+      width: 50%;
+      margin: auto;
+    }
+  }
 }
 
 /*======
@@ -12,7 +47,7 @@ TOUCHPADS
 @media screen and (min-width:768px) {
 
   body {
-    font-size: 22px;
+    font-size: 16px!important;
   }
 
   #homepage {
@@ -20,16 +55,23 @@ TOUCHPADS
     justify-content: flex-start;
 
     h1,h2,p {
-      font-size: 5rem;
+      font-size: 4rem;
+    }
+
+    h1 {
+      font-size: 4.3rem;
     }
 
     .js-scrollTo {
       display: block;
       position: absolute;
-      bottom: 30px;
+      bottom: 0;
       color: black;
       text-align: center;
       width: 100%;
+      &:hover, :focus, :active {
+        text-decoration: none;
+      }
     }
 
     .link-projects {
@@ -46,14 +88,33 @@ TOUCHPADS
     }
   }
 
-  .project-index-container {
+  .project-homepage-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-end;
+  }
+
+  .projects-contain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+
+    .project {
+      width: 50%;
+    }
   }
 
   .project {
     width: 44%;
+
+    .project-logo {
+      width: 100%;
+    }
+
+    .project-menu {
+      width: 100%;
+    }
   }
 
   .other-projects-contain {
@@ -94,15 +155,36 @@ TOUCHPADS
   // project show
 
   .project-show-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    .project-content {
+      order: 1;
+      width: 65%;
+    }
     p {
       padding: 0 1rem;
     }
   }
   .project-logo-tech {
     width: 35%;
-    float: right;
+    order: 2;
     padding-left: 1rem;
     padding-bottom: 1rem;
+    margin: 0;
+
+    .blue-button {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .project-logo {
+    width: 100%;
+  }
+
+  .project-images {
+    order: 3;
   }
 }
 
@@ -112,20 +194,24 @@ COMPUTERS
 
 @media screen and (min-width:1080px) {
   body {
-    font-size: 16px;
+    font-size: 14px!important;
   }
 
   #homepage {
-    height: 76vh;
+    height: 93vh;
 
-    .js-scrollTo {
-      bottom: 175px;
-    }
+
   }
 
 
   .project-index-container {
     justify-content: flex-start;
+  }
+
+  .front-project-container {
+    .project {
+      width: 25%;
+    }
   }
 
   .project {

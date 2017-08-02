@@ -73,7 +73,7 @@
                             @endif
                             <li><a href="{{ route('projects.index') }}"><i class="fa fa-book" aria-hidden="true"></i>
                                     <span class="show-sidebar">Projets</span></a></li>
-                            <li><a href="{{ route('blog-admin.index') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i>
+                            <li><a href="{{ route('blog.index') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i>
                                     <span class="show-sidebar">Blog</span></a></li>
                             <li><a href="{{ route('about.index') }}"><i class="fa fa-user-md" aria-hidden="true"></i>
                                     <span class="show-sidebar">Page à propos</span></a></li>
@@ -92,6 +92,7 @@
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item" href="{{ route('users.edit', auth()->user()->id) }}">Voir mon profil</a>
+                                    <a class="dropdown-item" href="{{ route('home') }}">Retourner sur le site</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}">Me déconnecter</a>
                                 </div>
                             </div>

@@ -11,7 +11,7 @@
             <h2>@if(isset($homepage)) {{ $homepage->job }} @endif</h2>
             <p>@if(isset($homepage)) {{ $homepage->age }}  @endif ans</p>
 
-            <a href="#projects" class="js-scrollTo">
+            <a href="#projects" class="js-scrollTo animated">
                 <div class="link-projects">
                     <p>Découvrez mes projets</p>
                     <i class="fa fa-arrow-down" aria-hidden="true"></i>
@@ -25,14 +25,14 @@
         <div class="projects-container">
 
             <!-- projet -->
-            <div class="project-index-container">
+            <div class="project-homepage-container">
 
                 @if(count($projects) > 0)
                     @foreach($projects as $project)
                         <div class="project">
                             <div class="project-logo">
                                 <a href="{{ route('front.projects.show', $project->id) }}">
-                                    <img src="images/kipponlogo.jpg" alt="">
+                                    <img src="/{{ $project->logo }}" alt="">
                                 </a>
 
                             </div>

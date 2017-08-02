@@ -11,12 +11,21 @@
 |
 */
 
-Route::resource('blog', 'PostsController');
+// homepage
+Route::get('/', 'HomeController@index')->name('home');
 
+// projects
 Route::get('projets', 'ProjectsController@index')->name('front.projects.index');
 Route::get('projets/{project}', 'ProjectsController@show')->name('front.projects.show');
 
-Route::get('/', 'HomeController@index')->name('home');
+// blog
+Route::get('blog', 'PostsController@index')->name('front.posts.index');
+Route::get('blog/{post}', 'PostsController@show')->name('front.posts.show');
+
+// about
+Route::get('a-propos', 'AboutController@index')->name('front.about.index');
+
+
 
 // Authentification
 Route::get('/register', 'Auth\RegisterController@create')->name('register.create');
@@ -41,6 +50,8 @@ Route::group(['prefix' => 'admin',  'middleware' => ['role:admin']], function()
     // projects
     Route::resource('projects', 'Admin\ProjectsController');
 
+    Route::resource('blog', 'Admin\PostsController');
+
     Route::resource('about', 'Admin\AboutController');
     // roles
     Route::resource('roles', 'RolesController');
@@ -49,9 +60,6 @@ Route::group(['prefix' => 'admin',  'middleware' => ['role:admin']], function()
 
     Route::any('user-data', 'Admin\UsersController@ajaxListing')->name('datatables.data');
     Route::any('project-data', 'Admin\ProjectsController@ajaxListing')->name('datatables.projectData');
-
-    Route::get('admin/story-amma', 'Admin\AmmastoryController@index')->name('story-amma.index');
-    Route::get('admin/blog-admin', 'Admin\PostsController@index')->name('blog-admin.index');
 });
 
 

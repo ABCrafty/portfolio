@@ -127,7 +127,7 @@ $(document).ready(function () {
 
     console.log($(window).width());
 
-    let $animationElements = $('.animated'),
+    let $animationElements = $('.custom-animated'),
         $window = $(window);
 
     let scroll = {
@@ -137,7 +137,7 @@ $(document).ready(function () {
             let windowBottomPosition = (windowTopPosition + windowHeight);
 
             $.each($animationElements, function() {
-                let $element = $('.service');
+                let $element = $(this);
                 let elementHeight = $element.outerHeight();
                 let elementTopPosition = $element.offset().top;
                 let elementBottomPosition = (elementTopPosition + elementHeight);
@@ -149,11 +149,51 @@ $(document).ready(function () {
                 } else {
 
                 }
+
+
             });
-        } // attribut checkView
+        }, // attribut checkView
+        scrollTo : function (e) {
+            var page = $(this).attr('href');
+            if ($('div.page'+page).length) {
+                e.preventDefault();
+                var speed = 750;
+                $('html, body').animate({scrollTop: $(page).offset().top}, speed);
+            }
+        }
+
     }; // objet scroll
+
+    setInterval(function () {
+        $('.js-scrollTo').toggleClass('bounce');
+    }, 5000);
 
     $(window).on('scroll resize', scroll.checkView);
     $(window).trigger('scroll');
+    $('.js-scrollTo').on('click', scroll.scrollTo);
+
+
+    $(".owl-carousel").owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        navText: [
+            '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+            '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+        ],
+        dotsEach:true,
+        autoplay:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            768:{
+                items:2
+            },
+            1080:{
+                items:3
+            }
+        }
+    });
 
 });

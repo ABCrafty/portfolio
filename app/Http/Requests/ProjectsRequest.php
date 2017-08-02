@@ -26,7 +26,8 @@ class ProjectsRequest extends FormRequest
         return [
             'title' => 'required',
             'body' => 'required',
-            'link' => 'required'
+            'link' => 'required',
+            'tech' => 'required'
         ];
     }
 }

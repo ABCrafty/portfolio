@@ -12,11 +12,14 @@ class ProjectsController extends Controller
     }
 
     public function index() {
-        $projects = Project::all();
+        $projects = Project::latest()->get();
         return view('projects.index', compact('projects'));
     }
 
-    public function show() {
+    public function show($id) {
+        $project = Project::find($id);
 
+        $usedTech = explode(', ', Project::pluck('tech'));
+        return view('projects.show', compact('project', 'usedTech'));
     }
 }

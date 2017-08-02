@@ -7,10 +7,17 @@ html,body {
 p {
   margin: 0;
   padding: 1rem 0;
+  font-family: 'Alegreya', serif;
 }
 
 a {
   text-decoration: none;
+  font-family: 'Alegreya', serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0!important;
+  font-family: 'Gloria Hallelujah', cursive!important;
 }
 
 .footer-container {
@@ -21,8 +28,9 @@ a {
 }
 
 #homepage {
-  height: 30vh;
+  height: 40vh;
   background-size: cover!important;
+  font-family: 'Gloria Hallelujah', cursive!important;
 }
 
 .homepage-container {
@@ -31,6 +39,20 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  h1, h2, p {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+
+  p {
+    font-family: 'Gloria Hallelujah', cursive!important;
+  }
 }
 
 .cascading-title {
@@ -49,122 +71,6 @@ a {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-.homepage-landing {
-  height: 80vh;
-}
-
-.massage-amma {
-  padding: 1rem;
-  letter-spacing: 2px;
-  margin-bottom: 12rem;
-
-  h1 {
-    text-transform: uppercase;
-  }
-
-  p {
-    padding: 1.5rem 0;
-    font-size: 1.1rem;
-  }
-
-  a {
-    margin: 0.5rem 0;
-    text-transform: uppercase;
-  }
-}
-
-.infos {
-  background: $primary-color;
-  font-size: 1.5rem;
-  padding: 2rem;
-  color: white;
-
-  .fa {
-    display: block;
-    text-align: center;
-    font-size: 2rem;
-    padding: 0.5rem;
-  }
-}
-
-.info {
-  p {
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.tel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  width: 300px;
-  top: 1rem;
-  right: 0;
-  border-radius: 7px 0 0 7px;
-  padding: 1.5rem;
-  color: white;
-  font-size: 1.5rem;
-  background: $primary-color;
-
-  a {
-    font-size: 2rem;
-    color: white;
-    text-decoration: underline;
-  }
-}
-
-.offers {
-  background: #eee;
-
-  > p {
-    text-align: center;
-    text-transform: uppercase;
-    padding: 3rem;
-    background: #eee;
-  }
-}
-
-.service {
-  padding: 0.5rem;
-  background: white;
-
-  .fa {
-    display: block;
-    text-align: center;
-    font-size: 2rem;
-  }
-
-  h6 {
-    text-transform: uppercase;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  p {
-    text-align: justify;
-  }
-
-  a {
-    display: block;
-    text-align: center;
-  }
-}
 
 .admin-header {
   height: 7vh;

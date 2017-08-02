@@ -23,8 +23,15 @@ class ProjectsController extends Controller
     }
 
     public function store(Request $request) {
-        $default_path = 'uploads/projects'.$request->input(str_replace(' ', '-', 'title'));
+        $default_path = 'uploads/projects/'.str_replace(' ', '-', $request->input('title')).'/';
+
         $logo = $this->upload(['file' => $request->file('logo'), 'path' => $default_path]);
+
+        $images = [];
+
+        foreach($request->file('images') as $image) {
+            $images[] = $this->upload(['file' => $image, 'path' => $default_path]);
+        }
 
         $input = [];
 
@@ -32,7 +39,11 @@ class ProjectsController extends Controller
         $input['user_id'] = auth()->user()->id;
         $input['body'] = $request->input('body');
         $input['link'] = $request->input('link');
-        $input['logo'] = serialize($logo);
+        $input['tech'] = $request->input('tech');
+        $input['logo'] = $logo;
+        $input['images'] = serialize($images);
+
+//        dd($default_path);
 
         $project = Project::create($input);
         $project->save($input);
@@ -54,6 +65,7 @@ class ProjectsController extends Controller
         $input['title'] = $request->input('title');
         $input['body'] = $request->input('body');
         $input['link'] = $request->input('link');
+        $input['tech'] = $request->input('tech');
 
         $project->update($input);
 

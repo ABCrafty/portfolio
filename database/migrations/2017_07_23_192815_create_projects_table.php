@@ -17,9 +17,11 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('title');
-            $table->string('body');
+            $table->text('body');
             $table->string('logo');
+            $table->text('images');
             $table->string('link');
+            $table->string('tech');
             $table->timestamps();
         });
     }

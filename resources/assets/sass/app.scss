@@ -1,6 +1,7 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url('https://fonts.googleapis.com/css?family=Alegreya');
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah');
 
 // partials
 @import "partials/_variables";
@@ -19,6 +20,8 @@
 
 // bootstrap 4
 @import "~bootstrap/scss/bootstrap.scss";
+
+// animate css
 @import "~animate.css/animate.min.css";
 
 

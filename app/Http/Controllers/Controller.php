@@ -13,6 +13,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     protected function upload(array $datas) {
+//        dd($datas);
         $file = $datas['file'];
         if(isset($datas['path']) && !file_exists($datas['path'])) {
             mkdir($datas['path'], 755, true);

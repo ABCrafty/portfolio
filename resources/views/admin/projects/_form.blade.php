@@ -38,7 +38,7 @@
     </div>
 
     <div class="col-12">
-        {!! Form::file('images', null, ['class' => 'form-control']) !!}
+        {!! Form::file('images[]', ['multiple' => true, 'class' => 'form-control']) !!}
         {!! $errors->first('images', '<span class="help-block">Ce champ est obligatoire</span>') !!}
     </div>
 </div>
@@ -51,5 +51,16 @@
     <div class="col-12">
         {!! Form::text('link', null, ['class' => 'form-control']) !!}
         {!! $errors->first('link', '<span class="help-block">Ce champ est obligatoire</span>') !!}
+    </div>
+</div>
+
+<div class="form-group form-custom <?php if($errors->has('tech')) { echo 'has-danger';} ?>">
+    <div class="col-3">
+        {!! Form::label('tech', 'Technologies utilisées pour ce site', ['class' => 'control-label']) !!}
+    </div>
+
+    <div class="col-12">
+        {!! Form::text('tech', null, ['class' => 'form-control']) !!}
+        {!! $errors->first('tech', '<span class="help-block">Ce champ est obligatoire</span>') !!}
     </div>
 </div>

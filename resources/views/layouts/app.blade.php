@@ -18,6 +18,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="{{ asset('OwlCarousel2/dist/assets/owl.carousel.css') }}">
+
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
@@ -43,5 +45,7 @@
 
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}"></script>
+<script src="{{ asset('OwlCarousel2/dist/owl.carousel.js') }}"></script>
+
 </body>
 </html>

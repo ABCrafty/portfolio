@@ -10,10 +10,10 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Projets</a>
+                <a class="nav-link" href="{{ route('front.projects.index') }}">Projets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Actualités</a>
+                <a class="nav-link" href="{{ route('front.posts.index') }}">Actualités</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">A propos de moi</a>
@@ -29,8 +29,8 @@
             <ul class="nav navbar-nav navbar-right">
 
                 @if (Auth::guest())
-                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Login</a></li>
-                    <li class="nav-item"><a href="{{ route('register.create') }}" class="nav-link">Register</a></li>
+                    <li class="nav-item"><a href="{{ route('login') }}" class="nav-link">Se connecter</a></li>
+                    <li class="nav-item"><a href="{{ route('register.create') }}" class="nav-link">Créer un compte</a></li>
                 @else
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle dropdown-custom-style" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
