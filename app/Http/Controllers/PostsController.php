@@ -12,14 +12,15 @@ class PostsController extends Controller
     }
 
     public function index() {
-        $posts = Posts::latest()->get();
+        $posts = Posts::latest()->paginate(10);
         return view('blog.index', compact('posts'));
     }
 
     public function show($id) {
         $post = Posts::find($id);
 
+        $posts = Posts::latest()->limit(3)->get();
 
-        return view('blog.show', compact('post'));
+        return view('blog.show', compact('post', 'posts'));
     }
 }

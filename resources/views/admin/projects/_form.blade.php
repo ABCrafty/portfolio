@@ -21,14 +21,14 @@
 </div>
 
 
-<div class="form-group form-custom <?php if($errors->has('logo')) { echo 'has-danger';} ?>">
+<div class="form-group form-custom <?php if($errors->has('logo.png')) { echo 'has-danger';} ?>">
     <div class="col-3">
-        {!! Form::label('logo', 'Logo du projet', ['class' => 'control-label']) !!}
+        {!! Form::label('logo.png', 'Logo du projet', ['class' => 'control-label']) !!}
     </div>
 
     <div class="col-12">
         {!! Form::file('logo', null, ['class' => 'form-control']) !!}
-        {!! $errors->first('logo', '<span class="help-block">Ce champ est obligatoire</span>') !!}
+        {!! $errors->first('logo.png', '<span class="help-block">Ce champ est obligatoire</span>') !!}
     </div>
 </div>
 

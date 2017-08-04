@@ -52,7 +52,11 @@
                         </div>
                         <div class="sidebar-profile">
                             <div class="admin-pic">
-                                <img src="http://www.kippondream.com/uploads/membres/3/kuro.jpg" alt="">
+                                @if(auth()->user()->avatar)
+                                    <img src="/{{ auth()->user()->avatar }}" alt="">
+                                @else
+                                    <img src="{{ url('images/gravatar.png') }}" alt="">
+                                @endif
                             </div>
                             <div class="admin-info">
                                 <p>Bonjour {{ auth()->user()->username }}</p>
@@ -86,7 +90,11 @@
                             <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle dropdown-custom-style" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <div class="admin-pic-dropdown">
-                                        <img src="http://www.kippondream.com/uploads/membres/3/kuro.jpg" alt="">
+                                        @if(auth()->user()->avatar)
+                                            <img src="/{{ auth()->user()->avatar }}" alt="">
+                                        @else
+                                            <img src="{{ url('images/gravatar.png') }}" alt="">
+                                        @endif
                                     </div>
                                     {{ auth()->user()->username }}
                                 </button>

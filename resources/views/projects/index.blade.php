@@ -5,7 +5,7 @@
         <div class="projects-contain">
             @foreach($projects as $project)
 
-                <div class="project">
+                <div class="project custom-animated">
                     <div class="project-logo">
                         <a href="{{ route('front.projects.show', $project->id) }}">
                             <img src="/{{ $project->logo }}" alt="">
@@ -22,6 +22,7 @@
             @endforeach
         </div>
 
+        {{ $projects->links() }}
 
     </div>
 @endsection

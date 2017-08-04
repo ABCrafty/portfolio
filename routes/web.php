@@ -19,11 +19,14 @@ Route::get('projets', 'ProjectsController@index')->name('front.projects.index');
 Route::get('projets/{project}', 'ProjectsController@show')->name('front.projects.show');
 
 // blog
-Route::get('blog', 'PostsController@index')->name('front.posts.index');
-Route::get('blog/{post}', 'PostsController@show')->name('front.posts.show');
+Route::get('blog', 'PostsController@index')->name('front.blog.index');
+Route::get('blog/{post}', 'PostsController@show')->name('front.blog.show');
 
 // about
 Route::get('a-propos', 'AboutController@index')->name('front.about.index');
+
+
+Route::get('mentions-legales', 'MentionsController@index')->name('mentions');
 
 
 
@@ -60,6 +63,7 @@ Route::group(['prefix' => 'admin',  'middleware' => ['role:admin']], function()
 
     Route::any('user-data', 'Admin\UsersController@ajaxListing')->name('datatables.data');
     Route::any('project-data', 'Admin\ProjectsController@ajaxListing')->name('datatables.projectData');
+    Route::any('blog-data', 'Admin\PostsController@ajaxListing')->name('datatables.blogData');
 });
 
 

@@ -11,24 +11,26 @@ LARGE MOBILES
     }
   }
 
+  .logo-img {
+    width:25%;
+  }
+
   .project-homepage-container {
-    .project {
+    .project, .post {
       img {
         max-width: 400px;
       }
     }
   }
-  .project {
-    .project-logo {
+  .project, .post, .other-post {
+    .project-logo, .post-image, .other-post-image {
       width: 60%;
       margin: auto;
-
-
     }
   }
 
 
-  .project-menu {
+  .project-menu, .post-menu {
     width: 60%;
     margin: auto;
   }
@@ -88,11 +90,10 @@ TOUCHPADS
     }
   }
 
-  .project-homepage-container {
+  .project-homepage-container, .blog-contain {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-end;
   }
 
   .projects-contain {
@@ -105,17 +106,19 @@ TOUCHPADS
     }
   }
 
-  .project {
+  .project, .post {
     width: 44%;
 
-    .project-logo {
-      width: 100%;
+    .project-logo, .post-image {
+      width: 100%!important;
     }
 
-    .project-menu {
+    .project-menu, .post-menu {
       width: 100%;
     }
   }
+
+
 
   .other-projects-contain {
     width: 100%;
@@ -186,25 +189,58 @@ TOUCHPADS
   .project-images {
     order: 3;
   }
+
+  // blog show
+
+  .blog-show-container {
+    display: flex;
+  }
+
+  .blog-content {
+    width: 65%;
+    font-size: 1.2rem;
+
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+
+  .blog-other-content {
+    width: 35%;
+  }
+
+  .other-post {
+    .other-post-image {
+      width: 100%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+  }
+
 }
 
 /*=======
 COMPUTERS
  ======*/
 
-@media screen and (min-width:1080px) {
+@media screen and (min-width:1000px) {
   body {
     font-size: 14px!important;
   }
 
+  .logo-img {
+    width:10%;
+  }
+
   #homepage {
     height: 93vh;
-
-
   }
 
 
-  .project-index-container {
+  .project-index-container, .blog-contain {
     justify-content: flex-start;
   }
 
@@ -214,7 +250,7 @@ COMPUTERS
     }
   }
 
-  .project {
+  .project, .post {
     width: 25%;
 
     h5 {
@@ -305,6 +341,29 @@ COMPUTERS
   .project-images {
     order: 3;
   }
+
+
+.footer-container {
+  p {
+    font-size: 1.5rem;
+  }
+}
+.footer-link {
+  a {
+    color: white;
+    font-size: 1.5rem;
+  }
+}
+
+  // blog show
+
+  .blog-content {
+    width: 75%;
+  }
+
+  .blog-other-content {
+    width: 25%;
+  }
 }
 
 /*===========
@@ -312,7 +371,25 @@ LARGE SCREENS
 ===========*/
 
 @media screen and (min-width:1600px) {
+  .logo-img {
+    width: 7%;
+  }
 
+  .front-project-container {
+    .project {
+      width: 20%;
+    }
+  }
+
+  .blog-contain {
+    h1 {
+      width: 100%;
+    }
+  }
+
+  .post {
+    width: 20%;
+  }
 }
 
 

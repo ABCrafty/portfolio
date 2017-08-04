@@ -32,7 +32,9 @@ class UsersController extends Controller
     public function update($user, Request $request) {
 
         $user = User::find($user);
-        $default_path = 'uploads/avatars'.$request->input('username');
+        $default_path = 'uploads/users/'.str_replace(' ', '-', $request->input('title')).'/';
+
+        $avatar = $this->upload(['file' => $request->file('avatar'), 'path' => $default_path]);
 
         if(!isset($user->password)) {
             $this->validate($request, [
@@ -53,7 +55,7 @@ class UsersController extends Controller
         $input['username'] = $request->input('username');
         $input['email'] = $request->input('email');
         $input['description'] = $request->input('description');
-        $input['avatar'] = serialize($avatar);
+        $input['avatar'] = $avatar;
 
         $user->update($input);
 

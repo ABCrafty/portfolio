@@ -12,7 +12,7 @@ class ProjectsController extends Controller
     }
 
     public function index() {
-        $projects = Project::latest()->get();
+        $projects = Project::latest()->paginate(10);
         return view('projects.index', compact('projects'));
     }
 

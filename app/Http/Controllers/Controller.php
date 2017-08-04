@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Facades\File;
 
 class Controller extends BaseController
 {
@@ -16,7 +17,7 @@ class Controller extends BaseController
 //        dd($datas);
         $file = $datas['file'];
         if(isset($datas['path']) && !file_exists($datas['path'])) {
-            mkdir($datas['path'], 755, true);
+            File::makeDirectory($datas['path'], $mode = 0777, true, true);
         }
         $file_name = $file->getClientOriginalName();
         if(isset($datas['context'])) {

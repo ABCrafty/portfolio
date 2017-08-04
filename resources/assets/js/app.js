@@ -145,7 +145,7 @@ $(document).ready(function () {
                 //check to see if this current container is within viewport
                 if ((elementBottomPosition >= windowTopPosition) &&
                     (elementTopPosition <= windowBottomPosition)) {
-                    $element.addClass('fadeInUp');
+                    $element.addClass('in-view');
                 } else {
 
                 }

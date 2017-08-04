@@ -12,10 +12,6 @@
    }
  }
 
-.projects-container {
-  text-align: center;
-}
-
 .projects-contain {
   background: rgba(255,255,255,0.6);
 }
@@ -48,6 +44,7 @@
 
 .project-homepage-container {
   padding: 1rem;
+
 
   .project-logo {
     overflow: hidden;
@@ -84,8 +81,19 @@
   }
 }
 
+.project.in-view {
+  margin-top: 0;
+  opacity: 1;
+}
+
 .project {
   padding: 1rem;
+  text-align: center;
+  margin-top: 3rem;
+  opacity: 0;
+  transition: all 0.5s;
+  transition-delay: 0.2s;
+
 
   .project-menu {
     background: $primary-color;
@@ -105,7 +113,6 @@
       &:hover {
         color: $secondary-color;
         background: white;
-        border: 1px solid $primary-color;
         text-decoration: none;
       }
     }

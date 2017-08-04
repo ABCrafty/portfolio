@@ -2,8 +2,8 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="{{ asset('/') }}" title="homepage">
-        <img src="{{asset('image/logo.png')}}" title="logo" alt="logo" class="logo-img">
+    <a class="navbar-brand logo-img" href="{{ asset('/') }}" title="homepage">
+        <img src="{{asset('images/logo.png')}}" title="logo" alt="logo">
     </a>
 
     <div class="collapse navbar-collapse" id="navbarMenu">
@@ -13,7 +13,7 @@
                 <a class="nav-link" href="{{ route('front.projects.index') }}">Projets</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('front.posts.index') }}">Actualités</a>
+                <a class="nav-link" href="{{ route('front.blog.index') }}">Actualités</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">A propos de moi</a>
