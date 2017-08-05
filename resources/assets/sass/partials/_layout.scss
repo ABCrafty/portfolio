@@ -5,7 +5,7 @@ html,body {
 }
 
 p {
-  margin: 0;
+  margin: 0!important;
   padding: 1rem 0;
   font-family: 'Alegreya', serif;
 }
@@ -17,7 +17,7 @@ a {
 
 h1,h2,h3,h4,h5,h6 {
   margin: 0!important;
-  font-family: 'Gloria Hallelujah', cursive!important;
+  font-family: 'Indie Flower', cursive!important;
 }
 
 .footer-container {
@@ -29,6 +29,16 @@ h1,h2,h3,h4,h5,h6 {
 
   p {
     font-size: 1.2rem;
+    margin: 0;
+  }
+
+  a {
+    color: white;
+    font-size: 1.2rem;
+    &:hover {
+      color: darken(white, 15%);
+      text-decoration: none;
+    }
   }
 }
 
@@ -40,16 +50,38 @@ h1,h2,h3,h4,h5,h6 {
   width: 50%;
 }
 
-.footer-link {
-  a {
-    color: white;
-    font-size: 1.2rem;
+.footer-menu, .footer-credits {
+  > p:first-child {
+    border-bottom: 1px solid white;
+    width: 90%;
+    padding: 0.1rem;
+    margin-bottom: 0.5rem;
   }
+
+  p {
+    padding: 0.2rem;
+  }
+}
+
+.footer-link {
+
 }
 
 .footer-bonus {
   text-align: center;
   width: 100%;
+
+  p {
+    font-size: 0.8rem !important;
+  }
+}
+
+.social-network {
+  .fa {
+    color: white;
+    font-size: 2rem;
+    margin: 0 0.3rem;
+  }
 }
 
 .logo-img {
@@ -62,13 +94,13 @@ h1,h2,h3,h4,h5,h6 {
 
 #homepage {
   height: 40vh;
-  background-size: cover!important;
-  font-family: 'Gloria Hallelujah', cursive!important;
+  background-size: cover !important;
+  font-family: 'Lato', sans-serif !important;
 }
 
 .homepage-container {
-  background: rgba(255,255,255,0.6);
-  height:100%;
+  background: rgba(255, 255, 255, 0.4);
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,51 +108,16 @@ h1,h2,h3,h4,h5,h6 {
   h1, h2, p {
     padding: 0.5rem;
     font-size: 1.5rem;
+    font-family: "Indie Flower", cursive;
   }
 
   h1 {
     font-size: 1.8rem;
   }
-
-
-  p {
-    font-family: 'Gloria Hallelujah', cursive!important;
-  }
-}
-
-.cascading-title {
-  span {
-    margin-bottom: 1rem;
-    opacity: 0;
-    transition-delay: 0.2s;
-    transition: all 0.5s ease-in;
-  }
-}
-
-.cascading-title.in-view {
-  span {
-    margin-top: 0;
-    opacity: 1;
-  }
-}
-
-
-.admin-header {
-  height: 7vh;
-  text-align: right;
-  background: #eee;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 1rem;
-}
-
-.admin-content {
-  padding: 3rem;
 }
 
 .breadcrumb {
-  background: white!important;
+  background: white !important;
 }
 .breadcrumb-item {
   a {
@@ -129,7 +126,7 @@ h1,h2,h3,h4,h5,h6 {
     }
   }
   &:before {
-    content: '>'!important;
+    content: '>' !important;
   }
   &:first-child {
     &:before {
@@ -147,22 +144,5 @@ h1,h2,h3,h4,h5,h6 {
 
   img {
     width: 100%;
-  }
-}
-
-.service {
-  margin: 1rem;
-
-  p {
-    padding: 1rem;
-  }
-
-
-  &:first-child {
-    margin-left: 2rem;
-  }
-
-  &:last-child {
-    margin-right: 1rem;
   }
 }

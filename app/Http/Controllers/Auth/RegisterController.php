@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Requests\UsersRequest;
-use App\Models\Role;
+use App\Role;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
@@ -50,7 +50,7 @@ class RegisterController extends Controller
 
 
     protected function create() {
-        return view('ammaAuth.register');
+        return view('auth.register');
     }
 
     protected function store(UsersRequest $request) {

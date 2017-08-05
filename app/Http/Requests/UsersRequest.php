@@ -28,7 +28,7 @@ class UsersRequest extends FormRequest
         return [
             'username' => 'bail|required|min:2',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6|confirmed'
         ];
     }
 }

@@ -25,6 +25,10 @@
       text-align: center;
     }
 
+    ul {
+      margin-top: 1rem;
+    }
+
     p {
       text-align: justify;
 
@@ -58,4 +62,5 @@
 }
 
 .commitment-contain {
+  transition: all 0.3s;
 }

@@ -89,7 +89,8 @@
 
                 <div class="commitment-contain">
                     <div class="interests commitment">
-                        <p>@if(isset($homepage)){{ $homepage->tech_title }}  @endif</p>
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <h4>@if(isset($homepage)){{ $homepage->tech_title }}  @endif</h4>
                         <ul>
                             @foreach($learnTech as $tech)
                                 <li class="tag">{{ $tech }}</li>

@@ -75,7 +75,7 @@
 // show
 
 .blog-content {
-
+  transition: all 0.3s;
   h1 {
     font-size: 1.2rem;
     text-align: center;
@@ -90,6 +90,11 @@
 .article {
   padding: 0.5rem;
   text-align: justify;
+  transition: all 0.3s;
+}
+
+.blog-other-content {
+  transition: all 0.3s;
 }
 
 .post-credits {

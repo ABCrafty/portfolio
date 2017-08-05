@@ -34,6 +34,11 @@
                 @else
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle dropdown-custom-style" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @if(auth()->user()->avatar)
+                            <div class="admin-pic-dropdown">
+                                <img src="/{{ auth()->user()->avatar }}" alt="">
+                            </div>
+                            @endif
                             {{ auth()->user()->username }}
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">

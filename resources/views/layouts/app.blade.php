@@ -27,8 +27,8 @@
 <body>
 
 @if($flash = session('message'))
-    <div class="alert alert-success alert-flash" role="alert">
-        <p>{{ $flash }}<span class="mr-auto"><i class="fa fa-times" aria-hidden="true"></i></span></p>
+    <div class="alert alert-success alert-admin animated bounceInRight" role="alert">
+        <p>{{ $flash }}</p>
     </div>
 @endif
 

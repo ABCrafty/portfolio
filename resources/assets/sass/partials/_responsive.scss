@@ -49,19 +49,36 @@ TOUCHPADS
 @media screen and (min-width:768px) {
 
   body {
-    font-size: 16px!important;
+    font-size: 14px;
   }
+
+  .footer-container {
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .footer-link {
+    a {
+      font-size: 1rem;
+    }
+  }
+
+  #navbarMenu {
+    align-items: center;
+  }
+
 
   #homepage {
     height: 91vh;
     justify-content: flex-start;
 
     h1,h2,p {
-      font-size: 4rem;
+      font-size: 3rem;
     }
 
     h1 {
-      font-size: 4.3rem;
+      font-size: 3.3rem;
     }
 
     .js-scrollTo {
@@ -163,14 +180,14 @@ TOUCHPADS
 
     .project-content {
       order: 1;
-      width: 65%;
+      width: 70%;
     }
     p {
       padding: 0 1rem;
     }
   }
   .project-logo-tech {
-    width: 35%;
+    width: 30%;
     order: 2;
     padding-left: 1rem;
     padding-bottom: 1rem;
@@ -197,7 +214,7 @@ TOUCHPADS
   }
 
   .blog-content {
-    width: 65%;
+    width: 70%;
     font-size: 1.2rem;
 
     h1 {
@@ -206,7 +223,7 @@ TOUCHPADS
   }
 
   .blog-other-content {
-    width: 35%;
+    width: 30%;
   }
 
   .other-post {
@@ -217,8 +234,32 @@ TOUCHPADS
         width: 100%;
       }
     }
-
   }
+
+  .article {
+    padding: 2rem;
+  }
+
+  // admin
+
+  .login-container, .register-container {
+    width: 80%;
+    margin: auto;
+
+    h1 {
+      text-align: center;
+    }
+
+    .form-custom {
+      padding: 1rem 0;
+    }
+  }
+
+  .register-container {
+    padding: 1rem;
+  }
+
+
 
 }
 
@@ -325,18 +366,21 @@ COMPUTERS
   .project-show-container {
     display: flex;
     flex-wrap: wrap;
+
+    .project-content {
+      width: 75%;
+    }
   }
 
   .project-logo-tech {
     float: none;
-    width: 30%;
+    width: 25%;
     order: 2;
     margin: 0;
+    font-size: 0.8rem;
   }
 
-  .project-content {
-    width: 68%;
-  }
+
 
   .project-images {
     order: 3;
@@ -345,24 +389,45 @@ COMPUTERS
 
 .footer-container {
   p {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 .footer-link {
   a {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }
 
   // blog show
 
   .blog-content {
-    width: 75%;
+    width: 80%;
   }
 
   .blog-other-content {
-    width: 25%;
+    width: 20%;
+  }
+
+  .article {
+    padding: 2rem 8rem;
+  }
+
+
+  .register-container, .login-container {
+    width: 40%;
+
+    h1 {
+      text-align: center;
+    }
+
+    .form-custom {
+      padding: 1rem 0;
+    }
+  }
+
+  .login-container {
+    padding: 8rem 0;
   }
 }
 
@@ -371,6 +436,16 @@ LARGE SCREENS
 ===========*/
 
 @media screen and (min-width:1600px) {
+
+  #homepage {
+    h1 {
+      font-size: 4rem;
+    }
+
+    h2, p {
+      font-size: 3.7rem;
+    }
+  }
   .logo-img {
     width: 7%;
   }
@@ -390,26 +465,9 @@ LARGE SCREENS
   .post {
     width: 20%;
   }
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media screen and (max-width: 400px) {

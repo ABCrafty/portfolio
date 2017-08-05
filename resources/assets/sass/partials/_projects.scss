@@ -13,7 +13,8 @@
  }
 
 .projects-contain {
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.4);
+  min-height: 68vh;
 }
 
 .other-projects {
@@ -159,9 +160,14 @@
   }
 }
 
+.project-content {
+  font-size: 1.1rem;
+}
+
 .project-logo-tech {
   width: 95%;
   margin: auto;
+  font-size: 1rem;
 
   .blue-button {
     display: block;
@@ -192,7 +198,7 @@
   padding: 0;
 
   .tag {
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
     background: $primary-color;
     color: white;
     border-radius: 40px;
