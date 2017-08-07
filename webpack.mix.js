@@ -19,5 +19,4 @@ mix.js([
     'node_modules/datatables.net-buttons/js/dataTables.buttons.js',
     'node_modules/datatables.net-autofill/js/dataTables.autoFill.js',
 ], 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css')
-    .version();
+    .sass('resources/assets/sass/app.scss', 'public/css');
