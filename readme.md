@@ -1,51 +1,40 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+## A propos de ce site
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Il s'agit de mon projet d'étude pour la 3wAcademy, vous êtes libre de l'utiliser ou d'utiliser une partie du code
+pour vos projets. Le site est un portfolio simple avec un listing de projets et leurs détails, ainsi qu'un blog.
 
-## About Laravel
+Pour pouvoir utiliser ce projet une fois cloné, suivez les indications suivantes :
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+composer require
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Cette commande va installer les dépendances php/laravel dont le site a besoin pour fonctionner, notamment pour
+les rôles et permissions, l'upload d'images, le datatables et les formulaires laravel. Pour les publier et les
+utiliser il faut ensuite rentrer la commande "php artisan vendor:publish"
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
 
-## Learning Laravel
+npm install
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+Cette commande va installer les dépendances js, en l'occurence bootstrap 4, datatables, animate.css. Ces dépendances
+sont gérées depuis le webpack de laravel. A noter que j'ai également téléchargé en local dans le dossier public
+les plugin ckeditoret owlCarousel2.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+Avec ça l'ensemble des dépendances est installée. Il reste à générer les données stockées dans le seeder.
+Il suffit de rentrer la commande suivante :
 
-## Laravel Sponsors
+php artisan db:seed
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+Cette commande va générer le contenu de la base de données que vous aurez défini 
+dans votre fichier .env. 
+Tapez yes dans la ligne de commandes quand il demande si vous voulez migrer la bdd, il va ensuite générer les 
+tables, le contenu de la page d'accueil et un utilisateur qui aura un role admin.
+Ce sera le seul à pouvoir accéder à la zone administrative du site, si vous voulez
+ utiliser vos identifiants et mots de passe, allez dans le dossier database/seeds 
+ et dans le fichier DatabaseSeeder.php changez les identifiants qui sont dans la 
+ variable $mainAdmin. Le mot de passe sera crypté automatiquement grâce à la fonction 
+ créée dans le model User.php
 
-- **[Vehikl](http://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Styde](https://styde.net)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Le site dispose enfin d'un système de login/register, n'importe quel utilisateur 
+peut ainsi s'y inscrire et se connecter, il aura de base un role guest. 
+A l'heure actuelle on ne peut pas changer le mot de passe à moins d'y toucher 
+dans la base de données. N'hésitez pas à me faire des retours pour améliorer
+le site, je débute encore sur laravel !
