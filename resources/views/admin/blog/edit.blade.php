@@ -1,5 +1,9 @@
 @extends('admin.layouts.app')
 
+@section('title')
+    Editer un article - @parent
+@endsection
+
 @section('content')
 
     <ol class="breadcrumb">

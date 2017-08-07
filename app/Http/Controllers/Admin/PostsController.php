@@ -61,8 +61,14 @@ class PostsController extends Controller
         return redirect()->route('blog.index');
     }
 
-    public function destroy() {
+    public function destroy($post) {
+        $post = Posts::find($post);
 
+        $post->delete();
+
+        session()->flash('message', 'Article supprimé');
+
+        return redirect()->back();
     }
 
     public function ajaxListing() {

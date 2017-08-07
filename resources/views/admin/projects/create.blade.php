@@ -1,5 +1,9 @@
 @extends('admin.layouts.app')
 
+@section('title')
+    Créer un projet - @parent
+@endsection
+
 @section('content')
     @include('layouts.errors._errors')
 
@@ -10,7 +14,7 @@
             <li class="breadcrumb-item">Création d'un nouveau projet</li>
         </ol>
 
-        <h1>Création d'un nouveau projet</h1>
+        <h1 title="Création d'un nouveau projet">Création d'un nouveau projet</h1>
         {!! Form::open(['route' => ['projects.store'], 'method' => 'post',
                     'enctype' => 'multipart/form-data', 'class' => ' form-bordered form-horizontal']) !!}
 

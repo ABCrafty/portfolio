@@ -34,8 +34,6 @@ class UsersController extends Controller
         $user = User::find($user);
         $default_path = 'uploads/users/'.str_replace(' ', '-', $request->input('title')).'/';
 
-        $avatar = $this->upload(['file' => $request->file('avatar'), 'path' => $default_path]);
-
         if(!isset($user->password)) {
             $this->validate($request, [
                 'password' => 'required'
@@ -47,15 +45,20 @@ class UsersController extends Controller
                 'email' => 'required|email'
             ]);
         }
+        if($request->file('avatar')) {
+            $avatar = $this->upload(['file' => $request->file('avatar'), 'path' => $default_path]);
+        }
 
-        $avatar = $this->upload(['file' => $request->file('avatar'), 'path' => $default_path]);
 
         $input = [];
 
         $input['username'] = $request->input('username');
         $input['email'] = $request->input('email');
         $input['description'] = $request->input('description');
-        $input['avatar'] = $avatar;
+
+        if($request->file('avatar')) {
+            $input['avatar'] = $avatar;
+        }
 
         $user->update($input);
 
@@ -64,16 +67,12 @@ class UsersController extends Controller
     }
 
     public function destroy($user) {
-//        if(auth()->user()->id == $id) {
-//            session()->flash('warning', 'On ne peut pas supprimer l\'utilisateur courant');
-//            return redirect()->back();
-//        }
 
         $user = User::find($user);
 
         $user->delete();
 
-        session()->flash('message', 'utilisateur supprimé');
+        session()->flash('message', 'Utilisateur supprimé');
 
         return redirect()->back();
     }

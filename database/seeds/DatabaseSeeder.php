@@ -86,6 +86,6 @@ class DatabaseSeeder extends Seeder
             'tech_title' => 'Les technos que je souhaite apprendre',
             'tech' => 'Symfony, Angular, VueJS, ES6, TypeScript',
         ]);
-        $this->command->warn("Contenu de la page d'accueil généré");
+        $this->command->warn("Homepage content generated");
     }
 }

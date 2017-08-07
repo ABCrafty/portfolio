@@ -1,15 +1,19 @@
 @extends('layouts.app')
 
+
+@section('title')
+    {{ $post->title }} - @parent
+@endsection
 @section('content')
 
 
     <div class="blog-show-container">
         <div class="blog-content">
-            <h1>{{ $post->title }}</h1>
+            <h1 title="{{ $post->title }}">{{ $post->title }}</h1>
 
-            <article>
+            <article role="article">
                 <div class="article">
-                    {{ $post->body }}
+                    {!! $post->body !!}
                 </div>
             </article>
 
@@ -19,7 +23,7 @@
             <div class="post-credits">
                 <div class="post-user">
                     <div class="post-user-picture">
-                        <img src="/{{ $post->user->avatar }}" alt="">
+                        <img src="/{{ $post->user->avatar }}" alt="avatar" title="avatar">
                     </div>
 
                     <p>Publié par {{ $post->user->username }} le {{ $post->created_at->toFormattedDateString() }}</p>
@@ -32,19 +36,20 @@
             </div>
 
             <div class="other-posts">
-                <h3>A lire aussi</h3>
+                <h2 title="à lire aussi">A lire aussi</h2>
                 @foreach($posts as $otherPost)
                     <div class="other-post">
                         <div class="other-post-image">
-                            <a href="{{ route('front.blog.show', $otherPost->id) }}"><img src="/{{ $otherPost->illustration }}" alt=""></a>
-
+                            <a href="{{ route('front.blog.show', $otherPost->id) }}">
+                                <img src="/{{ $otherPost->illustration }}" alt="illustration autre article">
+                            </a>
                         </div>
                         <div class="other-post-menu">
                             <div class="other-post-title">
                                 <h3>{{ str_limit($otherPost->title, 30) }}</h3>
                             </div>
                             <div class="other-post-link">
-                                <a href="{{ route('front.blog.show', $otherPost->id) }}">Lire l'article</a>
+                                <a title="lien vers autre article" href="{{ route('front.blog.show', $otherPost->id) }}">Lire l'article</a>
                             </div>
 
                         </div>

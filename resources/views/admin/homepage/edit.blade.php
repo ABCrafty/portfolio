@@ -1,5 +1,9 @@
 @extends('admin.layouts.app')
 
+@section('title')
+    Editer le contenu page d'accueil - @parent
+@endsection
+
 @section('content')
     <div class="form-container">
         @include('layouts.errors._errors')
@@ -8,7 +12,7 @@
             <li class="breadcrumb-item">Edit page d'accueil</li>
         </ol>
 
-        <h1>Edition du contenu page d'accueil</h1>
+        <h1 title="Edition du contenu page d'accueil">Edition du contenu page d'accueil</h1>
 
         {!! Form::model($homepage, ['route' => ['homepage.update', $homepage->id], 'method' => 'patch',
         'enctype' => 'multipart/form-data', 'class' => ' form-bordered']) !!}

@@ -2,13 +2,21 @@
   background: $primary-color;
   color: white;
   min-height: 100vh!important;
-  width: 4%;
+  width: 22%;
+  transition: all 0.3s;
 
+  &:hover {
+    width: 70%;
+
+    .admin-pic {
+      width: 40%;
+    }
+  }
   .admin-button {
     padding: 0.5rem;
     text-transform: uppercase;
     text-align: center;
-    height: 7vh;
+    height: 13vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,7 +32,7 @@
 
     .fa {
       font-size: 2rem;
-      margin-right: 0.5rem;
+      margin-right: 1.5rem;
     }
   }
 
@@ -78,5 +86,5 @@
 
 .show-sidebar {
   display: none;
-  transition: all 1s ease;
 }
+

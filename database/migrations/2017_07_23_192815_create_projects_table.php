@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->integer('user_id');
             $table->string('title');
             $table->text('body');
-            $table->string('logo.png');
+            $table->string('logo');
             $table->text('images');
             $table->string('link');
             $table->string('tech');

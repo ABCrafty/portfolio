@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('title')
-    @parent - Accueil
+    Accueil - @parent
 @endsection
 
 @section('content')
     <div id="homepage" style="background: url('images/rhone.jpg') no-repeat center center">
         <div class="homepage-container">
-            <h1>@if(isset($homepage)){{ $homepage->username }}  @endif</h1>
-            <h2>@if(isset($homepage)) {{ $homepage->job }} @endif</h2>
+            <h1 title="{{ $homepage->username }}">@if(isset($homepage)){{ $homepage->username }}  @endif</h1>
+            <h2 title="{{ $homepage->job }}">@if(isset($homepage)) {{ $homepage->job }} @endif</h2>
             <p>@if(isset($homepage)) {{ $homepage->age }}  @endif ans</p>
 
             <a href="#projects" class="js-scrollTo animated">
@@ -21,7 +21,7 @@
     </div> <!-- #homepage -->
 
     <div id="projects" class="page">
-        <h3>Projets/Réalisations</h3>
+        <h3 title="projets et réalisations">Projets/Réalisations</h3>
         <div class="projects-container">
 
             <!-- projet -->
@@ -31,8 +31,8 @@
                     @foreach($projects as $project)
                         <div class="project custom-animated">
                             <div class="project-logo">
-                                <a href="{{ route('front.projects.show', $project->id) }}">
-                                    <img src="/{{ $project->logo }}" alt="">
+                                <a href="{{ route('front.projects.show', $project->id) }}" title="lien vers le projet">
+                                    <img src="/{{ $project->logo }}" alt="logo projet" title="logo projet">
                                 </a>
 
                             </div>
@@ -49,7 +49,7 @@
                     <div class="other-projects-contain">
                         <div class="other-projects">
                             <p>@if(isset($homepage)){{ $homepage->other_projects }}  @endif</p>
-                            <a href="{{ route('front.projects.index') }}" class="home-project-link">Par ici !</a>
+                            <a href="{{ route('front.projects.index') }}" class="home-project-link" title="lien vers la page des projets">Par ici !</a>
                         </div>
                     </div>
 
@@ -66,7 +66,7 @@
                 <div class="commitment-contain">
                     <div class="commitment">
                         <i class="fa fa-code" aria-hidden="true"></i>
-                        <h4>@if(isset($homepage)){{ $homepage->commitment1_title }}  @endif</h4>
+                        <h4 title="{{ $homepage->commitment1_title }}">@if(isset($homepage)){{ $homepage->commitment1_title }}  @endif</h4>
                         <p>@if(isset($homepage)){{ $homepage->commitment1_content }}  @endif</p>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                 <div class="commitment-contain">
                     <div class="commitment">
                         <i class="fa fa-superpowers" aria-hidden="true"></i>
-                        <h4>@if(isset($homepage)){{ $homepage->commitment2_title }}  @endif</h4>
+                        <h4 title="{{ $homepage->commitment2_title }}">@if(isset($homepage)){{ $homepage->commitment2_title }}  @endif</h4>
                         <p>@if(isset($homepage)){{ $homepage->commitment2_content }}  @endif</p>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                 <div class="commitment-contain">
                     <div class="commitment">
                         <i class="fa fa-code-fork" aria-hidden="true"></i>
-                        <h4>@if(isset($homepage)){{ $homepage->commitment3_title }}  @endif</h4>
+                        <h4 title="{{ $homepage->commitment3_title }}">@if(isset($homepage)){{ $homepage->commitment3_title }}  @endif</h4>
                         <p>@if(isset($homepage)){{ $homepage->commitment3_content }}  @endif</p>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                 <div class="commitment-contain">
                     <div class="interests commitment">
                         <i class="fa fa-book" aria-hidden="true"></i>
-                        <h4>@if(isset($homepage)){{ $homepage->tech_title }}  @endif</h4>
+                        <h4 title="{{ $homepage->tech_title }}">@if(isset($homepage)){{ $homepage->tech_title }}  @endif</h4>
                         <ul>
                             @foreach($learnTech as $tech)
                                 <li class="tag">{{ $tech }}</li>

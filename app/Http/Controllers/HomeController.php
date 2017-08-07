@@ -29,4 +29,8 @@ class HomeController extends Controller
 
         return view('homepage.index', compact('homepage', 'projects', 'learnTech'));
     }
+
+    protected function clean($string) {
+        return preg_replace('/[^A-Za-z0-9\-]/', '', $string);
+    }
 }

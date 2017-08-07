@@ -1,5 +1,21 @@
+.admin-main-content {
+  width: 78%;
+}
+
+.admin-actions {
+  display: flex;
+}
+
+.admin-pic-dropdown {
+  width: 40px;
+
+  img {
+    width: 100%;
+  }
+}
+
 .admin-header {
-  height: 7vh;
+  height: 13vh;
   text-align: right;
   background: #eee;
   display: flex;
@@ -9,7 +25,11 @@
 }
 
 .admin-content {
-  padding: 3rem;
+  padding: 1rem 0.3rem;
+
+  h1 {
+    margin: 2rem 0!important;
+  }
 }
 
 .stats-contain {

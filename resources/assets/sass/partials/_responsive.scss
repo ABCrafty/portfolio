@@ -41,6 +41,26 @@ LARGE MOBILES
       margin: auto;
     }
   }
+
+  .sidebar-admin {
+    width: 12%;
+
+    &:hover {
+      width: 40%;
+    }
+
+    .admin-button {
+      height: 8vh;
+    }
+  }
+
+  .admin-header {
+    height: 8vh;
+  }
+
+  .admin-main-content {
+    width: 88%;
+  }
 }
 
 /*======
@@ -240,7 +260,7 @@ TOUCHPADS
     padding: 2rem;
   }
 
-  // admin
+  // login, register
 
   .login-container, .register-container {
     width: 80%;
@@ -257,6 +277,24 @@ TOUCHPADS
 
   .register-container {
     padding: 1rem;
+  }
+
+  // admin
+
+  .sidebar-admin {
+    width: 10%;
+
+    &:hover {
+      width: 35%;
+    }
+  }
+
+  .admin-main-content {
+    width: 90%;
+  }
+
+  .admin-content {
+    padding: 3rem;
   }
 
 
@@ -429,6 +467,38 @@ COMPUTERS
   .login-container {
     padding: 8rem 0;
   }
+
+  // admin
+
+  .sidebar-admin {
+    width: 7%;
+
+    &:hover {
+      width: 25%;
+    }
+  }
+
+  .admin-main-content {
+    width: 93%;
+  }
+}
+
+/*===========
+MEDIUM SCREENS
+===========*/
+
+@media screen and (min-width: 1200px) {
+  .sidebar-admin {
+    width: 5%;
+
+    &:hover {
+      width: 20%;
+    }
+  }
+
+  .admin-main-content {
+    width: 95%;
+  }
 }
 
 /*===========
@@ -466,28 +536,15 @@ LARGE SCREENS
     width: 20%;
   }
 
-
-}
-
-
-@media screen and (max-width: 400px) {
-  .logo-img {
-    width: 50%;
-  }
-
   .sidebar-admin {
-    width: 21%;
+    width: 4%;
 
-    .admin-button {
-      height: 13vh;
+    &:hover {
+      width: 15%;
     }
   }
 
   .admin-main-content {
-    width: 79%;
-  }
-
-  .admin-header {
-    height: 13vh;
+    width: 96%;
   }
 }

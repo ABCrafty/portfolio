@@ -1,5 +1,9 @@
 @extends('admin.layouts.app')
 
+@section('title')
+    Créer le contenu page d'accueil - @parent
+@endsection
+
 @section('content')
     @include('layouts.errors._errors')
 
@@ -9,7 +13,7 @@
             <li class="breadcrumb-item">Création page d'accueil</li>
         </ol>
 
-        <h1>Création du contenu de la page d'accueil</h1>
+        <h1 title="Création du contenu de la page d'accueil">Création du contenu de la page d'accueil</h1>
         {!! Form::open(['route' => ['homepage.store'], 'method' => 'post',
                     'enctype' => 'multipart/form-data', 'class' => ' form-bordered form-horizontal']) !!}
 

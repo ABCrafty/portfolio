@@ -22,10 +22,6 @@ Route::get('projets/{project}', 'ProjectsController@show')->name('front.projects
 Route::get('blog', 'PostsController@index')->name('front.blog.index');
 Route::get('blog/{post}', 'PostsController@show')->name('front.blog.show');
 
-// about
-Route::get('a-propos', 'AboutController@index')->name('front.about.index');
-
-
 Route::get('mentions-legales', 'MentionsController@index')->name('mentions');
 
 
@@ -44,26 +40,26 @@ Route::group(['prefix' => 'admin',  'middleware' => ['role:admin']], function()
 {
     Route::get('/', 'Admin\DashboardController@index')->name('dashboard.index');
 
+    Route::any('user-data', 'Admin\UsersController@ajaxListing')->name('datatables.data');
+    Route::any('project-data', 'Admin\ProjectsController@ajaxListing')->name('datatables.projectData');
+    Route::any('blog-data', 'Admin\PostsController@ajaxListing')->name('datatables.blogData');
+
     // route page d'accueil
     Route::resource('homepage', 'Admin\HomeController');
 
     // users, profile
-    Route::resource('users', 'Admin\UsersController');
+    Route::get('users/{user}/delete', 'Admin\UsersController@destroy')->name('users.destroy');
+    Route::resource('users', 'Admin\UsersController', ['except' => 'destroy']);
 
     // projects
-    Route::resource('projects', 'Admin\ProjectsController');
+    Route::get('projects/{project}/delete', 'Admin\ProjectsController@destroy')->name('projects.destroy');
+    Route::resource('projects', 'Admin\ProjectsController', ['except' => 'destroy']);
 
-    Route::resource('blog', 'Admin\PostsController');
+    // blog
+    Route::get('blog/{blog}/delete', 'Admin\PostsController@destroy')->name('blog.destroy');
+    Route::resource('blog', 'Admin\PostsController', ['except' => 'destroy']);
 
-    Route::resource('about', 'Admin\AboutController');
-    // roles
-    Route::resource('roles', 'RolesController');
 
-    Route::resource('permissions', 'PermissionsController');
-
-    Route::any('user-data', 'Admin\UsersController@ajaxListing')->name('datatables.data');
-    Route::any('project-data', 'Admin\ProjectsController@ajaxListing')->name('datatables.projectData');
-    Route::any('blog-data', 'Admin\PostsController@ajaxListing')->name('datatables.blogData');
 });
 
 

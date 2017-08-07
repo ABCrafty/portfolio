@@ -18,8 +18,6 @@ class ProjectsController extends Controller
 
     public function show($id) {
         $project = Project::find($id);
-
-        $usedTech = explode(', ', Project::pluck('tech'));
         return view('projects.show', compact('project', 'usedTech'));
     }
 }

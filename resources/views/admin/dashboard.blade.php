@@ -1,14 +1,14 @@
 @extends('admin.layouts.app')
 
 @section('title')
-    Admin Portfolio
+    Dashboard Portfolio - @parent
 @endsection
 
 @section('content')
     <div class="container-fluid">
-        <h1>Tableau de bord</h1>
+        <h1 title="tableau de bord">Tableau de bord</h1>
         <div class="row">
-            <div class="stats-contain col-4">
+            <div class="stats-contain col-12 col-md-6 col-lg-4">
                 <div class="stats">
                     <p>Nombre d'utilisateurs</p>
                     <div class="stats-numbers">{{ count($users) }}</div>
@@ -16,14 +16,14 @@
             </div>
 
 
-            <div class="stats-contain col-4">
+            <div class="stats-contain col-12 col-md-6 col-lg-4">
                 <div class="stats">
                     <p>Nombre de projets</p>
                     <div class="stats-numbers">{{ count($projects) }}</div>
                 </div>
             </div>
 
-            <div class="stats-contain col-4">
+            <div class="stats-contain col-12 col-md-6 col-lg-4">
                 <div class="stats ">
                     <p>Nombre d'articles</p>
                     <div class="stats-numbers">{{ count($articles) }}</div>
@@ -33,7 +33,7 @@
         </div>
 
         <div class="row">
-                <div class="time-stats-container col-12 col-sm-4">
+                <div class="time-stats-container col-12 col-md-6 col-lg-4">
                     <div class="time-stats">
                         <p>Nombre d'utilisateurs inscrits cette année : {{ count($usersYear) }}</p>
                         <p>Nombre d'utilisateurs inscrits ce mois : {{ count($usersMonth) }}</p>
@@ -43,7 +43,7 @@
 
                 </div>
 
-                <div class="time-stats-container col-12 col-sm-4">
+                <div class="time-stats-container col-12 col-md-6 col-lg-4">
                     <div class="time-stats">
                         <p>Nombre de projets créés cette année : {{ count($projectsYear) }}</p>
                         <p>Nombre de projets créés ce mois : {{ count($projectsMonth) }}</p>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
 
-                <div class="time-stats-container col-12 col-sm-4">
+                <div class="time-stats-container col-12 col-md-6 col-lg-4">
                     <div class="time-stats">
                         <p>Nombre d'articles publiés aujourd'hui : {{ count($articlesToday) }}</p>
                         <p>Nombre d'articles publiés ce mois : {{ count($articlesMonth) }}</p>

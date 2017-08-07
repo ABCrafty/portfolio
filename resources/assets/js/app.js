@@ -11,109 +11,109 @@ require('./bootstrap');
 
 $(function () {
 
-    console.log('test');
+    $('.tag').each(function () {
+        let text = $(this).text();
+        text = text.replace(/[^a-zA-Z ]/g, "", text);
+        $(this).text(text);
+    });
+
+
+
+    let $sidebarAdmin = $('.sidebar-admin');
+
+    // resize the height of the sidebar to make the full height of the page
     let resize = function () {
         let height = $(document).height();
-        console.log('test2');
-        $('.admin-content').height(height);
-        $('.sidebar-admin').height(height);
+        $('.admin-main-content').height(height);
     };
     $(document).resize(resize);
-    $('.sidebar-admin').height();
+    $sidebarAdmin.height();
     $('.admin-content').height();
 });
 
 $(document).ready(function () {
 
-    $('.alert-flash').slideDown(function () {
-        setTimeout(function () {
-            $('.alert-flash').slideUp('fast');
-        }, 5000);
-    });
-
+    // animate the notifications
     let animationOut = function () {
-        $('.alert-admin').addClass('bounceOutRight');
+        $('.alert-admin').addClass('bounceOutRight').delay(10).fadeOut();
     };
 
     setTimeout(animationOut, 5000);
 
+
+    // resize the widths of the sidebar and the main content during and after the hover
     let hoverIn = function () {
-        $('.admin-pic').css('width', '35%');
-        $('.sidebar-admin .fa').css('font-size', '1.5rem');
-        $('.admin-info').show();
-        $('.show-sidebar').show(250);
+
+        $('.show-sidebar').delay(100).fadeIn();
 
         if($(window).width() <= 400) {
-            $('.sidebar-admin').animate({width: '60%'}, 250);
-            $('.admin-main-content').width('40%');
+            $('.sidebar-admin').width('70%');
+            $('.admin-main-content').width('30%');
         }
 
         if($(window).width() > 400 && $(window).width() <= 550 ) {
-            $('.sidebar-admin').animate({width: '50%'}, 250);
-            $('.admin-main-content').width('50%');
+            $('.sidebar-admin').width('70%');
+            $('.admin-main-content').width('30%');
         }
 
         if($(window).width() > 550 && $(window).width() <= 768 ) {
-            $('.sidebar-admin').animate({width: '50%'}, 250);
-            $('.admin-main-content').width('50%');
+            $('.sidebar-admin').width('40%');
+            $('.admin-main-content').width('60%');
         }
 
-        if( $(window).width() > 768 && $(window).width() <= 992 ) {
-            $('.sidebar-admin').animate({width: '30%'}, 250);
-            $('.admin-main-content').width('70%');
+        if( $(window).width() > 768 && $(window).width() <= 999 ) {
+            $('.sidebar-admin').width('35%');
+            $('.admin-main-content').width('65%');
         }
 
-        if($(window).width() > 992 && $(window).width() <= 1200 ) {
-            $('.sidebar-admin').animate({width: '20%'}, 250);
-            $('.admin-main-content').width('80%');
+        if($(window).width() > 999 && $(window).width() <= 1200 ) {
+            $('.sidebar-admin').width('25%');
+            $('.admin-main-content').width('75%');
         }
 
         if($(window).width() > 1200 && $(window).width() <= 1599 ) {
-            $('.sidebar-admin').animate({width: '20%'}, 250);
+            $('.sidebar-admin').width('20%');
             $('.admin-main-content').width('80%');
         }
 
         if($(window).width() >= 1600) {
-            $('.sidebar-admin').animate({width: '20%'}, 250);
-            $('.admin-main-content').width('80%');
+            $('.sidebar-admin').width('15%');
+            $('.admin-main-content').width('85%');
         }
 
     };
 
     let hoverOut = function () {
-        $('.sidebar-admin .fa').css('font-size', '2rem');
-        $('.admin-info').hide();
+
         $('.show-sidebar').hide();
-        $('.admin-pic').width('100%');
-
         if($(window).width() <= 400) {
-            $('.sidebar-admin').width('21%');
-            $('.admin-main-content').width('79%');
+            $('.sidebar-admin').width('22%');
+            $('.admin-main-content').width('78%');
         }
 
-        if($(window).width() <= 550 && $(window).width() > 400) {
-            $('.sidebar-admin').width('16%');
-            $('.admin-main-content').width('84%');
+        if($(window).width() > 400 && $(window).width() <= 550) {
+            $('.sidebar-admin').width('22%');
+            $('.admin-main-content').width('78%');
         }
 
-        if($(window).width() <= 768 && $(window).width() > 550) {
+        if($(window).width() > 550 && $(window).width() <= 768) {
+            $('.sidebar-admin').width('12%');
+            $('.admin-main-content').width('88%');
+        }
+
+        if($(window).width() > 768 && $(window).width() <= 999) {
             $('.sidebar-admin').width('10%');
             $('.admin-main-content').width('90%');
         }
 
-        if($(window).width() <= 992 && $(window).width() > 768) {
-            $('.sidebar-admin').width('8%');
-            $('.admin-main-content').width('92%');
-        }
-
-        if($(window).width() > 992 && $(window).width() <= 1200 ) {
-            $('.sidebar-admin').width('6%');
-            $('.admin-main-content').width('94%');
+        if($(window).width() > 999 && $(window).width() <= 1200 ) {
+            $('.sidebar-admin').width('7%');
+            $('.admin-main-content').width('93%');
         }
 
         if($(window).width() > 1200 && $(window).width() <= 1599 ) {
-            $('.sidebar-admin').width('6%');
-            $('.admin-main-content').width('94%');
+            $('.sidebar-admin').width('5%');
+            $('.admin-main-content').width('95%');
         }
 
 
@@ -124,6 +124,7 @@ $(document).ready(function () {
     };
 
     $('.sidebar-admin').hover(hoverIn, hoverOut);
+
 
     console.log($(window).width());
 
@@ -149,10 +150,8 @@ $(document).ready(function () {
                 } else {
 
                 }
-
-
             });
-        }, // attribut checkView
+        }, // attribute checkView
         scrollTo : function (e) {
             var page = $(this).attr('href');
             if ($('div.page'+page).length) {
@@ -162,8 +161,9 @@ $(document).ready(function () {
             }
         }
 
-    }; // objet scroll
+    }; // object scroll
 
+    // animate the link to scroll every 5 seconds
     setInterval(function () {
         $('.js-scrollTo').toggleClass('bounce');
     }, 5000);
@@ -171,6 +171,7 @@ $(document).ready(function () {
     $(window).on('scroll resize', scroll.checkView);
     $(window).trigger('scroll');
     $('.js-scrollTo').on('click', scroll.scrollTo);
+
 
 
     $(".owl-carousel").owlCarousel({
@@ -195,5 +196,4 @@ $(document).ready(function () {
             }
         }
     });
-
 });

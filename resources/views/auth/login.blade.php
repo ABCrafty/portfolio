@@ -1,12 +1,19 @@
 @extends('layouts.app')
 
+@section('title')
+     Connexion - @parent
+@endsection
+
 @section('content')
     <div class="login-container">
 
         <h1>Se connecter</h1>
+
+
         {!! Form::open(['route' => ['login'], 'method' => 'post',
                 'enctype' => 'multipart/form-data', 'role' => 'form', 'class' => ' form-bordered form-horizontal']) !!}
 
+        @include('layouts.errors._errors')
             <div class="form-group form-custom <?php if($errors->has('email')) { echo 'has-danger';} ?>">
                 <div class="col-3">
                     {!! Form::label('email', 'Email', ['class' => 'control-label']) !!}

@@ -14,6 +14,7 @@ try {
     require('datatables.net');
     require('datatables.net-autofill');
     require('datatables.net-buttons');
+
 } catch (e) {}
 
 /**

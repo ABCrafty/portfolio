@@ -73,8 +73,14 @@ class ProjectsController extends Controller
         return redirect()->route('projects.index');
     }
 
-    public function destroy() {
+    public function destroy($project) {
+        $project = Project::find($project);
 
+        $project->delete();
+
+        session()->flash('message', 'projet supprimé');
+
+        return redirect()->back();
     }
 
     public function ajaxListing() {

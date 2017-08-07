@@ -2,7 +2,20 @@
 <html lang="{{ config('app.locale') }}">
 <head>
     <meta charset="utf-8">
+    <meta name="description" content="Site portfolio d'Alexandre Black | Contient un portfolio et des articles">
+    <meta name="keyword" content="Alexandre Black, Lyon, Developpeur, Web, PHP, JavaScript, jQuery, Bootstrap, SASS">
+    <meta name="twitter:site" content="@Kuro_KD"/>
+    <meta name="twitter:image" content="{{ asset('images/logo.png') }}"/>
+    <meta property="og:title" content="Alexandre Black">
+    <meta property="og:description" content="Site portfolio d'Alexandre Black | Contient un portfolio et des articles"/>
+    <meta property="og:image" content="{{ asset('images/logo.png') }}"/>
+    <meta property="og:url" content="http://www.alexandreblack.fr" />
+    <meta property="og:site_name" content="Alexandre Black" />
+    <meta property="og:type" content="website" />
+    <meta name="geo.region" content="FR" />
+    <meta name="geo.placename" content="Lyon" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -32,14 +45,14 @@
     </div>
 @endif
 
-<header>
+<header role="banner">
     @include('layouts.partials._menu')
 </header>
 <main role="main">
     @yield('content')
 </main>
 
-<footer>
+<footer role="footer">
     @include('layouts.partials._footer')
 </footer>
 

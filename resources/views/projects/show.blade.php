@@ -1,19 +1,24 @@
 @extends('layouts.app')
 
+@section('title')
+    {{ $project->title }} - @parent
+@endsection
+
 @section('content')
-    <h1 class="project-title">{{$project['title']}}</h1>
+    <h1 class="project-title">{{ $project->title }}</h1>
 
     <div class="project-show-container">
         <div class="project-logo-tech">
-            <a class="blue-button" target="_blank" href="http://{{ $project->link }}">Se rendre sur le site</a>
+            <a class="blue-button" target="_blank" href="http://{{ $project->link }}"
+               title="lien externe vers le site du projet">Se rendre sur le site</a>
             <div class="project-logo">
-                <img src="/{{ $project->logo }}" alt="">
+                <img src="/{{ $project->logo }}" alt="logo projet" title="logo projet">
             </div>
 
             <div class="project-tech">
-                <h3>Technologies utilisées</h3>
+                <h2>Technologies utilisées</h2>
                 <ul class="tech">
-                    @foreach($usedTech as $tech)
+                    @foreach(explode(', ', $project->tech) as $tech)
                         <li class="tag">{{ $tech }}</li>
                     @endforeach
                 </ul>
@@ -21,7 +26,7 @@
         </div>
 
         <div class="project-content">
-            <p>{{$project['body']}}</p>
+            <p>{!! $project->body !!}</p>
         </div>
 
         <div class="owl-carousel owl-theme project-images">

@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
+@section('title')
+    Créer un compte - @parent
+@endsection
+
 @section('content')
-
-
-
 
         <div class="container-fluid login-container">
             <div class="row">
@@ -32,6 +33,8 @@
                         <div class="col-12">
                             {!! Form::text('email', null, ['class' => 'form-control']) !!}
                             {!! $errors->first('email', '<span class="help-block">Ce champ est obligatoire</span>') !!}
+                            {!! $errors->first('email', '<p class="help-block">Cet email existe peut-être déjà</p>') !!}
+
                         </div>
                     </div>
 
@@ -61,11 +64,6 @@
 
                     {!! Form::close() !!}
                 </div>
-
             </div>
-
         </div>
-
-
-    </div>
 @endsection

@@ -3,7 +3,19 @@
 <html lang="{{ config('app.locale') }}">
 
 <head>
-    <meta name="description" content="">
+
+    <meta name="description" content="Site portfolio d'Alexandre Black | Contient un portfolio et des articles">
+    <meta name="keyword" content="Alexandre Black, Lyon, Developpeur, Web, PHP, JavaScript, jQuery, Bootstrap, SASS">
+    <meta name="twitter:site" content="@Kuro_KD"/>
+    <meta name="twitter:image" content="{{ asset('images/logo.png') }}"/>
+    <meta property="og:title" content="Alexandre Black">
+    <meta property="og:description" content="Site portfolio d'Alexandre Black | Contient un portfolio et des articles"/>
+    <meta property="og:image" content="{{ asset('images/logo.png') }}"/>
+    <meta property="og:url" content="http://www.alexandreblack.fr" />
+    <meta property="og:site_name" content="Alexandre Black" />
+    <meta property="og:type" content="website" />
+    <meta name="geo.region" content="FR" />
+    <meta name="geo.placename" content="Lyon" />
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
@@ -16,8 +28,6 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
 
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
@@ -60,7 +70,7 @@
                             <img src="{{ url('images/gravatar.png') }}" alt="">
                         @endif
                     </div>
-                    <div class="admin-info">
+                    <div class="admin-info show-sidebar">
                         <p>Bonjour {{ auth()->user()->username }}</p>
                         <div class="admin-actions">
                             <a href="{{ route('users.edit', auth()->user()->id) }}"><i class="fa fa-id-card" aria-hidden="true"></i></a>
@@ -70,21 +80,45 @@
 
                 </div>
                 <ul class="list-unstyled menu-admin">
-                    <li><a href="{{ route('dashboard.index') }}"><i class="fa fa-tachometer" aria-hidden="true"></i>
-                            <span class="show-sidebar">Tableau de bord</span></a></li>
+                    <li>
+                        <i class="fa fa-tachometer" aria-hidden="true"></i>
+                        <span class="show-sidebar">
+                            <a href="{{ route('dashboard.index') }}">Tableau de bord</a>
+                        </span>
+                    </li>
                     @if($homepage)
-                        <li><a href="{{ route('homepage.edit', ['id' => $homepage->id]) }}"> <i class="fa fa-home" aria-hidden="true"></i><span class="show-sidebar">Page d'accueil</span></a></li>
+                        <li>
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            <span class="show-sidebar">
+                                <a href="{{ route('homepage.edit', ['id' => $homepage->id]) }}">Page d'accueil</a>
+                            </span>
+                        </li>
                     @else
-                        <li><a href="{{ route('homepage.create') }}"><i class="fa fa-home" aria-hidden="true"></i> <span class="show-sidebar">Page d'accueil</span></a></li>
+                        <li>
+                            <i class="fa fa-home" aria-hidden="true"></i>
+                            <span class="show-sidebar">
+                                <a href="{{ route('homepage.create') }}">Page d'accueil</a>
+                            </span>
+                        </li>
                     @endif
-                    <li><a href="{{ route('projects.index') }}"><i class="fa fa-book" aria-hidden="true"></i>
-                            <span class="show-sidebar">Projets</span></a></li>
-                    <li><a href="{{ route('blog.index') }}"><i class="fa fa-pencil-square" aria-hidden="true"></i>
-                            <span class="show-sidebar">Blog</span></a></li>
-                    <li><a href="{{ route('about.index') }}"><i class="fa fa-user-md" aria-hidden="true"></i>
-                            <span class="show-sidebar">Page à propos</span></a></li>
-                    <li><a href="{{ route('users.index') }}"><i class="fa fa-user" aria-hidden="true"></i>
-                            <span class="show-sidebar">Utilisateurs</span></a></li>
+                    <li>
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        <span class="show-sidebar">
+                            <a href="{{ route('projects.index') }}">Projets</a>
+                        </span>
+                    </li>
+                    <li>
+                        <i class="fa fa-pencil-square" aria-hidden="true"></i>
+                            <span class="show-sidebar">
+                                <a href="{{ route('blog.index') }}">Blog</a>
+                            </span>
+                    </li>
+                    <li>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span class="show-sidebar">
+                            <a href="{{ route('users.index') }}">Utilisateurs</a>
+                        </span>
+                    </li>
                 </ul>
             </div>
             <div class="admin-main-content">
@@ -118,7 +152,8 @@
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}"></script>
 <script src="{{ asset('OwlCarousel2/dist/owl.carousel.js') }}"></script>
-@stack('scripts');
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+@stack('scripts')
 </body>
 
 </html>
