@@ -20,7 +20,9 @@
             <a href="{{ route('mentions') }}" title="lien vers les mentions légales">Mentions légales</a>
         </div>
 
+        <p>Logo réalisé par Mélanie Croce</p>
         <p>Photos de paysage fournies par JHM</p>
+
         
 
         <div class="social-network">
