@@ -16,17 +16,20 @@
                     {!! $post->body !!}
                 </div>
             </article>
-
         </div>
 
         <div class="blog-other-content">
             <div class="post-credits">
                 <div class="post-user">
                     <div class="post-user-picture">
-                        <img src="/{{ $post->user->avatar }}" alt="avatar" title="avatar">
+                        @if($post->user->avatar)
+                            <img src="/{{ auth()->user()->avatar }}" alt="">
+                        @else
+                            <img src="{{ url('images/gravatar.png') }}" alt="">
+                        @endif
                     </div>
 
-                    <p>Publié par {{ $post->user->username }} le {{ $post->created_at->toFormattedDateString() }}</p>
+                    <p>Publié par {{ $post->user->username }}</p>
                 </div>
                 <div class="post-user-presentation">
                     <p>{{ $post->user->description }}</p>
@@ -51,9 +54,7 @@
                             <div class="other-post-link">
                                 <a title="lien vers autre article" href="{{ route('front.blog.show', $otherPost->id) }}">Lire l'article</a>
                             </div>
-
                         </div>
-
                     </div>
                 @endforeach
             </div>

@@ -61,8 +61,14 @@ class ProjectsController extends Controller
     public function update($project, Request $request) {
 
         $project = Project::find($project);
+
         $images = unserialize($project->images);
         $default_path = 'uploads/projects/'.str_replace(' ', '-', $request->input('title')).'/';
+
+        if($request->file('logo')) {
+            $logo = $this->upload(['file' => $request->file('logo'), 'path' => $default_path]);
+        }
+
 
         // add images to the existing ones
         if($request->file('images')) {
@@ -77,7 +83,13 @@ class ProjectsController extends Controller
         $input['body'] = $request->input('body');
         $input['link'] = $request->input('link');
         $input['tech'] = $request->input('tech');
-        $input['images'] = serialize($images);
+
+        if($request->file('images')) {
+            $input['images'] = serialize($images);
+        }
+        if($request->file('logo')) {
+            $input['logo'] = $logo;
+        }
 
         $project->update($input);
 

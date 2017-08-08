@@ -63,7 +63,10 @@ class PostsController extends Controller
 
         $input['title'] = $request->input('title');
         $input['body'] = $request->input('body');
-        $input['illustration'] = $illustration;
+        if($request->file('illustration')) {
+            $input['illustration'] = $illustration;
+        }
+
         $post->update($input);
 
         session()->flash('message','Article mis à jour');
