@@ -8,9 +8,10 @@
 require('./bootstrap');
 
 
-
+// javascript on the page load for the urgent stuff
 $(function () {
 
+    // removes the special characters that were appearing on the tags
     $('.tag').each(function () {
         let text = $(this).text();
         text = text.replace(/[^a-zA-Z ]/g, "", text);
@@ -21,7 +22,7 @@ $(function () {
 
     let $sidebarAdmin = $('.sidebar-admin');
 
-    // resize the height of the sidebar to make the full height of the page
+    // resize the height of the backoffice sidebar to make the full height of the page
     let resize = function () {
         let height = $(document).height();
         $('.admin-main-content').height(height);
@@ -31,6 +32,7 @@ $(function () {
     $('.admin-content').height();
 });
 
+// javascript after the page load
 $(document).ready(function () {
 
     // animate the notifications
@@ -45,7 +47,7 @@ $(document).ready(function () {
     let hoverIn = function () {
 
         $('.show-sidebar').delay(100).fadeIn();
-
+        $('.sidebar-admin').css('transition', 'all 0.3s ');
         if($(window).width() <= 400) {
             $('.sidebar-admin').width('70%');
             $('.admin-main-content').width('30%');
@@ -83,9 +85,11 @@ $(document).ready(function () {
 
     };
 
+    // behaviour when we leave the hover in the sidebar
     let hoverOut = function () {
 
         $('.show-sidebar').hide();
+        $('.sidebar-admin').css('transition', 'all 0s ');
         if($(window).width() <= 400) {
             $('.sidebar-admin').width('22%');
             $('.admin-main-content').width('78%');
@@ -123,6 +127,7 @@ $(document).ready(function () {
         }
     };
 
+    // execution of the hover functions
     $('.sidebar-admin').hover(hoverIn, hoverOut);
 
 
@@ -131,7 +136,9 @@ $(document).ready(function () {
     let $animationElements = $('.custom-animated'),
         $window = $(window);
 
+    // all scroll behaviours
     let scroll = {
+        // checkView allows to add classes when the targeted element gets scrolled into the view
         checkView : function () {
             let windowHeight = $window.height();
             let windowTopPosition = $window.scrollTop();
@@ -152,11 +159,13 @@ $(document).ready(function () {
                 }
             });
         }, // attribute checkView
+
+        // scrollTo is here to make a smooth scroll when we click the link on the homepage
         scrollTo : function (e) {
-            var page = $(this).attr('href');
+            let page = $(this).attr('href');
             if ($('div.page'+page).length) {
                 e.preventDefault();
-                var speed = 750;
+                let speed = 750;
                 $('html, body').animate({scrollTop: $(page).offset().top}, speed);
             }
         }
@@ -168,11 +177,13 @@ $(document).ready(function () {
         $('.js-scrollTo').toggleClass('bounce');
     }, 5000);
 
+    // execution of the scroll functions
     $(window).on('scroll resize', scroll.checkView);
     $(window).trigger('scroll');
     $('.js-scrollTo').on('click', scroll.scrollTo);
 
 
+    // plugins init
 
     $(".owl-carousel").owlCarousel({
         loop:true,

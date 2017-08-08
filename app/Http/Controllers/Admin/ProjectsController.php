@@ -25,10 +25,12 @@ class ProjectsController extends Controller
     public function store(Request $request) {
         $default_path = 'uploads/projects/'.str_replace(' ', '-', $request->input('title')).'/';
 
+        // use the custom upload function written in Controller.php
         $logo = $this->upload(['file' => $request->file('logo'), 'path' => $default_path]);
 
         $images = [];
 
+        // multi upload for images
         foreach($request->file('images') as $image) {
             $images[] = $this->upload(['file' => $image, 'path' => $default_path]);
         }
@@ -43,7 +45,6 @@ class ProjectsController extends Controller
         $input['logo'] = $logo;
         $input['images'] = serialize($images);
 
-//        dd($default_path);
 
         $project = Project::create($input);
         $project->save($input);
@@ -60,12 +61,23 @@ class ProjectsController extends Controller
     public function update($project, Request $request) {
 
         $project = Project::find($project);
+        $images = unserialize($project->images);
+        $default_path = 'uploads/projects/'.str_replace(' ', '-', $request->input('title')).'/';
+
+        // add images to the existing ones
+        if($request->file('images')) {
+            foreach($request->file('images') as $image) {
+                $images[] = $this->upload(['file' => $image, 'path' => $default_path]);
+            }
+        }
+
         $input = [];
 
         $input['title'] = $request->input('title');
         $input['body'] = $request->input('body');
         $input['link'] = $request->input('link');
         $input['tech'] = $request->input('tech');
+        $input['images'] = serialize($images);
 
         $project->update($input);
 
@@ -83,6 +95,7 @@ class ProjectsController extends Controller
         return redirect()->back();
     }
 
+    // generates the content in the datatables for the projects' index using the Laravel Datatatbles plugin
     public function ajaxListing() {
         $projects = Project::select(['id', 'title']);
         return Datatables::of($projects)

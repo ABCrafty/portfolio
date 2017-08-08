@@ -25,6 +25,7 @@ class PostsController extends Controller
     public function store(Request $request) {
         $default_path = 'uploads/articles/'.str_replace(' ', '-', $request->input('title')).'/';
 
+        // use the custom upload function written in Controller.php
         $illustration = $this->upload(['file' => $request->file('illustration'), 'path' => $default_path]);
 
         $input = [];
@@ -50,11 +51,19 @@ class PostsController extends Controller
     public function update($post, Request $request) {
 
         $post = Posts::find($post);
+
+        $default_path = 'uploads/articles/'.str_replace(' ', '-', $request->input('title')).'/';
+
+        if($request->file('illustration')) {
+            $illustration = $this->upload(['file' => $request->file('illustration'), 'path' => $default_path]);
+        }
+
+
         $input = [];
 
         $input['title'] = $request->input('title');
         $input['body'] = $request->input('body');
-
+        $input['illustration'] = $illustration;
         $post->update($input);
 
         session()->flash('message','Article mis à jour');

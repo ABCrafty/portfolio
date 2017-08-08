@@ -5,6 +5,7 @@ LARGE MOBILES
 @media screen and (min-width:550px) {
 
 
+  // homepage content
   .homepage-container {
     h1, h2, p {
       padding: 1rem;
@@ -22,6 +23,8 @@ LARGE MOBILES
       }
     }
   }
+
+  // project and blog contents
   .project, .post, .other-post {
     .project-logo, .post-image, .other-post-image {
       width: 60%;
@@ -42,6 +45,7 @@ LARGE MOBILES
     }
   }
 
+  // admin
   .sidebar-admin {
     width: 12%;
 
@@ -68,6 +72,7 @@ TOUCHPADS
 ======*/
 @media screen and (min-width:768px) {
 
+  // layout
   body {
     font-size: 14px;
   }
@@ -88,7 +93,13 @@ TOUCHPADS
     align-items: center;
   }
 
+  .footer-container {
+    li {
+      padding: 1rem 5rem
+    }
+  }
 
+  // homepage content
   #homepage {
     height: 91vh;
     justify-content: flex-start;
@@ -127,10 +138,34 @@ TOUCHPADS
     }
   }
 
+  .commitments-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .commitment-contain {
+    width: 50%;
+    padding: 0.2rem;
+
+    .commitment {
+      height: 100%;
+    }
+  }
+
+  .profile-text {
+    padding: 2rem;
+
+    .know-more {
+      padding: 1rem;
+    }
+  }
+
+  // homepage, projects and blog content
   .project-homepage-container, .blog-contain {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-end;
   }
 
   .projects-contain {
@@ -164,33 +199,9 @@ TOUCHPADS
      }
   }
 
-  .commitments-container {
-    display: flex;
-    flex-wrap: wrap;
-  }
 
-  .commitment-contain {
-    width: 50%;
-    padding: 0.2rem;
 
-    .commitment {
-      height: 100%;
-    }
-  }
 
-  .profile-text {
-    padding: 2rem;
-
-    .know-more {
-      padding: 1rem;
-    }
-  }
-
-  .footer-container {
-    li {
-      padding: 1rem 5rem
-    }
-  }
 
   // project show
 
@@ -206,6 +217,7 @@ TOUCHPADS
       padding: 0 1rem;
     }
   }
+
   .project-logo-tech {
     width: 30%;
     order: 2;
@@ -306,6 +318,8 @@ COMPUTERS
  ======*/
 
 @media screen and (min-width:1000px) {
+
+  // layout
   body {
     font-size: 14px!important;
   }
@@ -314,10 +328,24 @@ COMPUTERS
     width:10%;
   }
 
+
+  // homepage content
+
   #homepage {
     height: 93vh;
   }
 
+  .commitment-contain {
+    width: 25%;
+    padding: 0.2rem;
+  }
+
+  .commitment {
+    width: 100%!important;
+  }
+
+
+  // projects and blog content
 
   .project-index-container, .blog-contain {
     justify-content: flex-start;
@@ -355,14 +383,7 @@ COMPUTERS
     }
   }
 
-  .commitment-contain {
-    width: 25%;
-    padding: 0.2rem;
-  }
 
-  .commitment {
-    width: 100%!important;
-  }
 
   .presentation {
     .profile-text {
@@ -390,14 +411,7 @@ COMPUTERS
     }
   }
 
-  .form-container {
-    width: 50%;
-    margin: auto;
-  }
 
-  .form-text {
-    text-align: center;
-  }
 
   // project show
 
@@ -481,6 +495,15 @@ COMPUTERS
   .admin-main-content {
     width: 93%;
   }
+
+  .form-container {
+    width: 50%;
+    margin: auto;
+  }
+
+  .form-text {
+    text-align: center;
+  }
 }
 
 /*===========
@@ -507,6 +530,7 @@ LARGE SCREENS
 
 @media screen and (min-width:1600px) {
 
+  // homepage content
   #homepage {
     h1 {
       font-size: 4rem;
@@ -516,10 +540,12 @@ LARGE SCREENS
       font-size: 3.7rem;
     }
   }
+
   .logo-img {
     width: 7%;
   }
 
+  // projects and blog
   .front-project-container {
     .project {
       width: 20%;
@@ -536,6 +562,7 @@ LARGE SCREENS
     width: 20%;
   }
 
+  // admin
   .sidebar-admin {
     width: 4%;
 
