@@ -23,9 +23,9 @@
                 <div class="post-user">
                     <div class="post-user-picture">
                         @if($post->user->avatar)
-                            <img src="/{{ auth()->user()->avatar }}" alt="">
+                            <img src="/{!! $post->user->avatar !!}" alt="">
                         @else
-                            <img src="{{ url('images/gravatar.png') }}" alt="">
+                            <img src="{!!  url('images/gravatar.png') !!}" alt="">
                         @endif
                     </div>
 
